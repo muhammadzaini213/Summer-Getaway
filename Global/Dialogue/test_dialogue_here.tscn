@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ddtwva7lxvdq"]
+
+[ext_resource type="Script" uid="uid://bavoirtkoowjo" path="res://Global/Dialogue/test_npc_script.gd" id="1_2t8fw"]
+[ext_resource type="PackedScene" uid="uid://djg6aqf33ck20" path="res://Global/Dialogue/dialogue_box.tscn" id="2_vw28e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r2si6"]
+
+[node name="test_dialogue" type="Node" unique_id=1457290699]
+
+[node name="DialogueManager" parent="." unique_id=1982719470 instance=ExtResource("2_vw28e")]
+
+[node name="Empty_npc" type="Area2D" parent="." unique_id=299595773 node_paths=PackedStringArray("dialogue_manager")]
+script = ExtResource("1_2t8fw")
+dialogue_manager = NodePath("../DialogueManager")
+json_data_path = "res://Global/Dialogue/test_dialogue_data.json"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Empty_npc" unique_id=1393738433]
+shape = SubResource("CircleShape2D_r2si6")
