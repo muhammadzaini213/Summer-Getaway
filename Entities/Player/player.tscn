@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://doyx4dp13gh2t" path="res://Entities/Player/Assets/placeholder_human.png" id="2_3uyv8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ntmi"]
-radius = 75.0
+radius = 9.055386
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lu8i8"]
 atlas = ExtResource("2_3uyv8")

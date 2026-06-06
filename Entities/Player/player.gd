@@ -1,6 +1,9 @@
 # This is the main player script. It handles movement, basic state management, and interactions.
 extends CharacterBody2D
 
+@warning_ignore("unused_signal")
+signal interact()
+
 #region Enums
 enum PlayerState {
 	IDLE,
@@ -10,20 +13,23 @@ enum PlayerState {
 #endregion
 
 #region Variables
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+
 @export_category("Movement")
-@export var speed: float = 50.0
 @export var grid_size: int = 16
-
-@export_category("Player State")
-@export var current_state: PlayerState = PlayerState.IDLE
-
+@export_subgroup("Speed")
+@export var base_speed := 50.0
+@export var min_speed: float = 25.0
+@export var max_speed: float = 100.0
+var speed: float = base_speed
 var moving_direction: Vector2
 var facing_direction: String
-
 var is_moving: bool
 var target_position: Vector2
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@export_category("Player State")
+@export var current_state: PlayerState = PlayerState.IDLE
 #endregion
 
 
@@ -37,6 +43,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		check_for_new_move()
 
+
+func _input(_event):
+	if Input.is_action_just_pressed("interact"):
+		interact.emit()
+		print("interact")
 
 # Checks for new movement input and starts moving if any is detected. If no input is detected, the player will idle.
 func check_for_new_move() -> void:
@@ -67,7 +78,9 @@ func start_move(direction: Vector2) -> void:
 	is_moving = true
 
 	current_state = PlayerState.WALK
-	animated_sprite_2d.play("walk_" + facing_direction)
+
+	if animated_sprite_2d.animation != str("walk_" + facing_direction):
+		animated_sprite_2d.play("walk_" + facing_direction)
 
 
 # Moves the player towards the target position on a grid.
@@ -85,6 +98,9 @@ func move_to_target(delta: float) -> void:
 
 
 func idle_player() -> void:
+	if current_state == PlayerState.IDLE:
+		return
+
 	current_state = PlayerState.IDLE
 	if facing_direction != "":
 		animated_sprite_2d.play("idle_" + facing_direction)
