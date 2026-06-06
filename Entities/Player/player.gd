@@ -25,7 +25,8 @@ enum PlayerState {
 var speed: float = base_speed
 var moving_direction: Vector2
 var facing_direction: String
-var is_moving: bool
+var is_moving: bool = false
+var can_move: bool = true
 var target_position: Vector2
 
 @export_category("Player State")
@@ -66,7 +67,8 @@ func check_for_new_move() -> void:
 		idle_player()
 		return
 	
-	start_move(input_dir)
+	if can_move:
+		start_move(input_dir)
 
 
 # Starts the movement process
@@ -98,7 +100,7 @@ func move_to_target(delta: float) -> void:
 
 
 func idle_player() -> void:
-	if current_state == PlayerState.IDLE:
+	if current_state == PlayerState.IDLE or current_state == PlayerState.INTERACT:
 		return
 
 	current_state = PlayerState.IDLE

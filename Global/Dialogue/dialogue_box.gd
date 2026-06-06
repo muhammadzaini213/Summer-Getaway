@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal finish_dialogue
+
 @onready var portrait: TextureRect = $DialogueBox/Portrait
 @onready var name_label: Label = $DialogueBox/NameLabel
 @onready var text_label: RichTextLabel = $DialogueBox/DialogueText
@@ -116,7 +118,6 @@ func handle_continue_input() -> void:
 	else:
 		hide_dialogue()
 
-
 func show_choices(choices: Array) -> void:
 	clear_choices()
 
@@ -139,10 +140,8 @@ func clear_choices() -> void:
 
 
 func hide_dialogue() -> void:
+	finish_dialogue.emit()
 	visible = false
 	clear_choices()
 	typing = false
 	can_continue = false
-	
-
-	

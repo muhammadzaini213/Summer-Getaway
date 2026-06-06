@@ -9,8 +9,9 @@
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1688093262]
 zoom = Vector2(3, 3)
 
-[node name="TestObject" type="Node2D" parent="." unique_id=799681990]
+[node name="TestObject" type="Node2D" parent="." unique_id=799681990 node_paths=PackedStringArray("interactable")]
 script = ExtResource("1_wfp4g")
+interactable = NodePath("Interactable")
 
 [node name="ColorRect" type="ColorRect" parent="TestObject" unique_id=1734139138]
 offset_left = 10.0
@@ -20,6 +21,7 @@ offset_bottom = 19.0
 
 [node name="Interactable" parent="TestObject" unique_id=434908918 instance=ExtResource("2_n8ap1")]
 position = Vector2(27, 2)
+lock_player = true
 
 [node name="Player" parent="." unique_id=1635420167 instance=ExtResource("3_yt6hh")]
 position = Vector2(-24, 0)

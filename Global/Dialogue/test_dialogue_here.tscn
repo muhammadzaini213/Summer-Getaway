@@ -11,15 +11,17 @@
 
 [node name="DialogueManager" parent="." unique_id=1982719470 instance=ExtResource("2_vw28e")]
 
-[node name="Empty_npc" type="Area2D" parent="." unique_id=299595773 node_paths=PackedStringArray("dialogue_manager")]
+[node name="Empty_npc" type="Area2D" parent="." unique_id=299595773 node_paths=PackedStringArray("dialogue_manager", "interactable")]
 script = ExtResource("1_2t8fw")
 dialogue_manager = NodePath("../DialogueManager")
 json_data_path = "res://Global/Dialogue/test_dialogue_data.json"
+interactable = NodePath("Interactable")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Empty_npc" unique_id=1393738433]
 shape = SubResource("CircleShape2D_r2si6")
 
 [node name="Interactable" parent="Empty_npc" unique_id=434908918 instance=ExtResource("3_7bcdn")]
+lock_player = true
 
 [node name="Player" parent="." unique_id=1635420167 instance=ExtResource("4_up6md")]
 position = Vector2(-34, 1)
