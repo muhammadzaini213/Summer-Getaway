@@ -1,5 +1,5 @@
 class_name Interactable extends Area2D
-# This scripts main scene should be put as a child to the object that is to be interacted with.
+# This scripts main scene(interactable.tscn) should be put as a child to the object that is to be interacted with.
 # The object just needs an on_interaction() function to work.
 
 var user: CharacterBody2D
@@ -37,4 +37,5 @@ func pass_interaciton() -> void:
 	if not interaction_object:
 		return
 
-	interaction_object.on_interact()
+	if interaction_object.has_method("on_interact"):
+		interaction_object.on_interact()
