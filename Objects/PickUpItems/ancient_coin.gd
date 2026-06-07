@@ -16,8 +16,6 @@ func _process(_delta: float) -> void:
 		queue_free()
 
 
-
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player_near = true
