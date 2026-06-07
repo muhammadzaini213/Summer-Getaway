@@ -14,7 +14,7 @@ var current_id := ""
 var current_text := ""
 var typing := false
 var can_continue := false
-
+var input_locked := false
 
 func _ready() -> void:
 	hide_dialogue()
@@ -22,10 +22,13 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if not visible:
 		return
-
+		
+	if input_locked:
+			return
+			
 	if Input.is_action_just_pressed("interact"):
 		handle_continue_input()
-		
+	
 func load_dialogue_json(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
 
@@ -53,9 +56,14 @@ func start_dialogue_from_file(path: String) -> void:
 	dialogue_data = data.get("nodes", {})
 	current_id = start_id
 	visible = true
-
+	
+	input_locked = true
 	show_dialogue_node(current_id)
-
+	call_deferred("unlock_dialogue_input")
+	
+func unlock_dialogue_input() -> void:
+	await get_tree().create_timer(0.1).timeout
+	input_locked = false
 
 func show_dialogue_node(id: String) -> void:
 	clear_choices()
@@ -103,6 +111,7 @@ func type_text(full_text: String) -> void:
 		text_label.text += full_text[i]
 		await get_tree().create_timer(type_speed).timeout
 
+	text_label.text = full_text
 	typing = false
 	can_continue = true
 
@@ -117,11 +126,15 @@ func handle_continue_input() -> void:
 		typing = false
 		text_label.text = current_text
 		can_continue = true
+
+		var node: Dictionary = dialogue_data[current_id]
+		if node.has("choices"):
+			show_choices(node["choices"])
 		return
-		
+
 	if not can_continue:
 		return
-	
+
 	var node: Dictionary = dialogue_data[current_id]
 
 	if node.has("choices"):

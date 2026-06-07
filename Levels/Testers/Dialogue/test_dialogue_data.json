@@ -26,16 +26,26 @@
 			"speaker": "Old Man",
 			"portrait": "res://Levels/Testers/Dialogue/placeholder_old_man.png",
 			"text": "The rock is still blocking the path.",
-			"next": "end"
+			"choices": [
+				{
+					"text": "remove rock",
+					"next": "thanks"
+				},
+				{
+					"text": "do nothing",
+					"next": "end"
+				}
+			]
 		},
-
+	
 		"thanks": {
 			"speaker": "Old Man",
 			"portrait": "res://Levels/Testers/Dialogue/placeholder_old_man.png",
 			"text": "Thank you. The path is clear now.",
+			"set_flag": "rock_removed",
 			"next": "end"
 		},
-
+		
 		"end": {
 			"end": true
 		}
