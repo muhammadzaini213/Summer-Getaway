@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddtwva7lxvdq"]
 
-[ext_resource type="Script" uid="uid://bavoirtkoowjo" path="res://Global/Dialogue/test_npc_script.gd" id="1_2t8fw"]
-[ext_resource type="PackedScene" uid="uid://djg6aqf33ck20" path="res://Global/Dialogue/dialogue_box.tscn" id="2_vw28e"]
+[ext_resource type="Script" uid="uid://bavoirtkoowjo" path="res://Levels/Testers/Dialogue/test_npc_script.gd" id="1_2t8fw"]
+[ext_resource type="PackedScene" uid="uid://djg6aqf33ck20" path="res://Global/Dialogue/dialogue_manager.tscn" id="2_vw28e"]
 [ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Objects/Interactables/interactable.tscn" id="3_7bcdn"]
 [ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Entities/Player/player.tscn" id="4_up6md"]
 
@@ -14,7 +14,7 @@
 [node name="Empty_npc" type="Area2D" parent="." unique_id=299595773 node_paths=PackedStringArray("dialogue_manager", "interactable")]
 script = ExtResource("1_2t8fw")
 dialogue_manager = NodePath("../DialogueManager")
-json_data_path = "res://Global/Dialogue/test_dialogue_data.json"
+json_data_path = "res://Levels/Testers/Dialogue/test_dialogue_data.json"
 interactable = NodePath("Interactable")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Empty_npc" unique_id=1393738433]

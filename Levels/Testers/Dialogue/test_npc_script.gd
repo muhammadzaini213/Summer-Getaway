@@ -10,8 +10,7 @@ func _ready() -> void:
 	dialogue_manager.finish_dialogue.connect(finish_interaction)
 
 func on_interact() -> void:
-	var data = dialogue_manager.load_dialogue_json(json_data_path)
-	dialogue_manager.start_dialogue(data)
+	dialogue_manager.start_dialogue_from_file(json_data_path)
 
 
 func finish_interaction() -> void:

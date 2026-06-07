@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://djg6aqf33ck20"]
 
-[ext_resource type="Script" uid="uid://ch0or4jf6v0ow" path="res://Global/Dialogue/dialogue_box.gd" id="1_senjy"]
+[ext_resource type="Script" uid="uid://ch0or4jf6v0ow" path="res://Global/Dialogue/dialogue_manager.gd" id="1_tbgw2"]
 
 [node name="DialogueManager" type="CanvasLayer" unique_id=1982719470]
-script = ExtResource("1_senjy")
+script = ExtResource("1_tbgw2")
 
 [node name="DialogueBox" type="Control" parent="." unique_id=2047370900]
 layout_mode = 3

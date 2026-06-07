@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 [autoload]
 
 Helpers="*uid://c0twhblsjel4p"
+GameState="*uid://bpfeiksga5w0a"
 
 [global_group]
 

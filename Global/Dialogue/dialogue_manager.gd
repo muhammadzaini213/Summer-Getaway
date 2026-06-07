@@ -30,21 +30,30 @@ func load_dialogue_json(path: String) -> Dictionary:
 	var file := FileAccess.open(path, FileAccess.READ)
 
 	if file == null:
+		push_error("Could not open dialogue file: " + path)
 		return {}
 
 	var text := file.get_as_text()
 	var result = JSON.parse_string(text)
 
-	if typeof(result) == TYPE_DICTIONARY:
-		return result
+	if typeof(result) != TYPE_DICTIONARY:
+		push_error("Dialogue JSON is not a dictionary: " + path)
+		return {}
 
-	return {}
+	return result
 	
-func start_dialogue(data: Dictionary, start_id: String = "start") -> void:
-	dialogue_data = data
+func start_dialogue_from_file(path: String) -> void:
+	var data := load_dialogue_json(path)
+
+	if data.is_empty():
+		return
+
+	var start_id := get_start_node(data)
+
+	dialogue_data = data.get("nodes", {})
 	current_id = start_id
 	visible = true
-	
+
 	show_dialogue_node(current_id)
 
 
@@ -57,12 +66,17 @@ func show_dialogue_node(id: String) -> void:
 
 	var node: Dictionary = dialogue_data[id]
 	
+	if node.has("set_flag"):
+		GameState.set_flag(node["set_flag"])
+
+	if node.has("remove_flag"):
+		GameState.remove_flag(node["remove_flag"])
+	
 	if node.has("end") and node["end"] == true:
 		hide_dialogue()
 		return
 
 	current_id = id
-	print(name_label)
 	name_label.text = node.get("speaker", "")
 
 	var portrait_path: String = node.get("portrait", "")
@@ -145,3 +159,16 @@ func hide_dialogue() -> void:
 	clear_choices()
 	typing = false
 	can_continue = false
+
+func get_start_node(data: Dictionary) -> String:
+	if not data.has("states"):
+		return "start"
+
+	for state in data["states"]:
+		if state.has("required_flag"):
+			if GameState.has_flag(state["required_flag"]):
+				return state.get("start", "start")
+		else:
+			return state.get("start", "start")
+
+	return "start"
