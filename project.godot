@@ -18,13 +18,10 @@ config/features=PackedStringArray("4.6", "GL Compatibility")
 
 Helpers="*uid://c0twhblsjel4p"
 GameState="*uid://bpfeiksga5w0a"
-<<<<<<< Updated upstream
 DaySystem="*res://Global/DaySystem/day_system.gd"
 AccusationSystem="*res://Global/AccusationSystem/accusation_system.gd"
-=======
 GameEvents="*uid://dujfiroijr18g"
 BuildingData="*uid://cn0614at5x8rl"
->>>>>>> Stashed changes
 
 [global_group]
 
