@@ -20,7 +20,7 @@ func _signal_interactable() -> void:
 			_target_interactable.user = user
 			_target_interactable.start_interaction()
 			return
-
+	
 func _on_area_entered(area: Area2D) -> void:
 	if not area is Interactable:
 		return

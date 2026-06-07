@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfcoow5hq5n33"
-path="res://.godot/imported/Paper_UI_Boarder01.png-9328faa4245936a7967b64cef8ce7bae.ctex"
+uid="uid://b5ya11ubp4y0b"
+path="res://.godot/imported/wood_house.png-d5a140c85fbcbdef3ab6f0b41e3fe79f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Paper_UI_Boarder01.png"
-dest_files=["res://.godot/imported/Paper_UI_Boarder01.png-9328faa4245936a7967b64cef8ce7bae.ctex"]
+source_file="res://Assets/Interior/Template/wood_house.png"
+dest_files=["res://.godot/imported/wood_house.png-d5a140c85fbcbdef3ab6f0b41e3fe79f.ctex"]
 
 [params]
 
