@@ -15,6 +15,7 @@ var current_text := ""
 var typing := false
 var can_continue := false
 var input_locked := false
+var dialogue_active := false
 
 func _ready() -> void:
 	hide_dialogue()
@@ -56,6 +57,8 @@ func start_dialogue_from_file(path: String) -> void:
 	dialogue_data = data.get("nodes", {})
 	current_id = start_id
 	visible = true
+	dialogue_active = true
+	_set_day_timer_paused(true)
 	
 	input_locked = true
 	show_dialogue_node(current_id)
@@ -167,11 +170,15 @@ func clear_choices() -> void:
 
 
 func hide_dialogue() -> void:
-	finish_dialogue.emit()
+	if dialogue_active:
+		finish_dialogue.emit()
+		_set_day_timer_paused(false)
+
 	visible = false
 	clear_choices()
 	typing = false
 	can_continue = false
+	dialogue_active = false
 
 func get_start_node(data: Dictionary) -> String:
 	if not data.has("states"):
@@ -185,3 +192,14 @@ func get_start_node(data: Dictionary) -> String:
 			return state.get("start", "start")
 
 	return "start"
+
+
+func _set_day_timer_paused(paused: bool) -> void:
+	var day_system := get_node_or_null("/root/DaySystem")
+	if day_system == null:
+		return
+
+	if paused:
+		day_system.pause_timer()
+	else:
+		day_system.resume_timer()
