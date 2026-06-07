@@ -209,15 +209,10 @@ func hide_dialogue() -> void:
 	dialogue_active = false
 
 func get_start_node(data: Dictionary) -> String:
-	if not data.has("states"):
-		return "start"
-	for state in data["states"]:
-		if state.has("required_flag"):
-			if GameState.has_flag(state["required_flag"]):
-				return state.get("start", "start")
-		else:
+	for state in data.get("states", []):
+		var flag = state.get("required_flag")
+		if not flag or GameState.has_flag(flag):
 			return state.get("start", "start")
-
 	return "start"
 
 
