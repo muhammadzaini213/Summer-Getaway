@@ -107,6 +107,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1635420167 groups=["player"]]
+collision_mask = 3
 script = ExtResource("1_l8h54")
 
 [node name="Interactor" parent="." unique_id=1940396334 instance=ExtResource("3_lu8i8")]

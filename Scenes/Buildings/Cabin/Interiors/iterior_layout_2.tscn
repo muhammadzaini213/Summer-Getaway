@@ -1,0 +1,37 @@
+[gd_scene format=4 uid="uid://b3k2d5sojvah6"]
+
+[ext_resource type="TileSet" uid="uid://daiv4g8520u5x" path="res://Assets/Interior/Template/wood_house_tileset.tres" id="1_8e60t"]
+[ext_resource type="Script" uid="uid://c480vnyfxbx1p" path="res://Scenes/Buildings/Scripts/interior.gd" id="1_jmpo3"]
+[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Entities/Player/player.tscn" id="2_7by3t"]
+[ext_resource type="PackedScene" uid="uid://dh7ui5wbwx8s3" path="res://Scenes/Buildings/Cabin/Exterior/cabin.tscn" id="2_h3w6e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3w6e"]
+
+[node name="IteriorLayout2" type="Node2D" unique_id=1310346251]
+script = ExtResource("1_jmpo3")
+previous_scene = ExtResource("2_h3w6e")
+
+[node name="Floors" type="TileMapLayer" parent="." unique_id=1265039360]
+position = Vector2(-8, 0)
+tile_map_data = PackedByteArray("AAD/////AAABAAEAAAD///7/AAABAAEAAAD///3/AAABAAEAAAD///z/AAABAAEAAAD///v/AAABAAEAAAD///r/AAABAAEAAAD+//v/AAABAAEAAAD+//r/AAABAAEAAAD+//n/AAABAAEAAAD+//j/AAABAAEAAAD///j/AAABAAEAAAAAAPj/AAABAAEAAAABAPj/AAABAAEAAAAAAPv/AAABAAEAAAAAAPz/AAABAAEAAAAAAP3/AAABAAEAAAAAAP7/AAABAAEAAAABAPv/AAABAAEAAAABAPr/AAABAAEAAAABAPn/AAABAAEAAAAAAPn/AAABAAEAAAD///n/AAABAAEAAAAAAPr/AAABAAEAAAAAAP//AAABAAEAAAA=")
+tile_set = ExtResource("1_8e60t")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=1384451579]
+position = Vector2(-8, 0)
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAYAAAABAP//AAACAAIAAAABAP7/AAACAAEAAAABAP3/AAACAAEAAAABAPz/AAADAAIAAAACAPz/AAACAAIAAAACAPv/AAACAAEAAAACAPr/AAACAAEAAAACAPn/AAACAAEAAAACAPj/AAACAAEAAAACAPf/AAACAAAAAAABAPf/AAADAAQAAAAAAPf/AAABAAQAAAD///f/AAADAAQAAAD+//f/AAABAAQAAAD9//f/AAAAAAAAAAD9//j/AAAAAAEAAAD9//n/AAAAAAEAAAD9//r/AAAAAAEAAAD9//v/AAAAAAEAAAD9//z/AAAAAAIAAAD+//z/AAAEAAIAAAD+//3/AAAAAAEAAAD+//7/AAAAAAEAAAD+////AAAAAAIAAAD/////AAABAAIAAAA=")
+tile_set = ExtResource("1_8e60t")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=678271586]
+position = Vector2(-2, -80)
+zoom = Vector2(3, 3)
+
+[node name="Player" parent="." unique_id=1635420167 instance=ExtResource("2_7by3t")]
+position = Vector2(-1, -34)
+
+[node name="ExitTransition" type="Area2D" parent="." unique_id=680951066]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTransition" unique_id=877834599]
+shape = SubResource("RectangleShape2D_h3w6e")
+
+[connection signal="body_entered" from="ExitTransition" to="." method="_on_exit_transition_body_entered"]

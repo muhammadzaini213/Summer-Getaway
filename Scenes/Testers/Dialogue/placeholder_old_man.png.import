@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfcoow5hq5n33"
-path="res://.godot/imported/Paper_UI_Boarder01.png-9328faa4245936a7967b64cef8ce7bae.ctex"
+uid="uid://b76weuc2q4dtv"
+path="res://.godot/imported/placeholder_old_man.png-1dbfacc950d26e41cb7c20db189a7ff4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Paper_UI_Boarder01.png"
-dest_files=["res://.godot/imported/Paper_UI_Boarder01.png-9328faa4245936a7967b64cef8ce7bae.ctex"]
+source_file="res://Scenes/Testers/Dialogue/placeholder_old_man.png"
+dest_files=["res://.godot/imported/placeholder_old_man.png-1dbfacc950d26e41cb7c20db189a7ff4.ctex"]
 
 [params]
 

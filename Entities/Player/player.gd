@@ -48,7 +48,6 @@ func _physics_process(delta: float) -> void:
 func _input(_event):
 	if Input.is_action_just_pressed("interact"):
 		interact.emit()
-		print("interact")
 
 # Checks for new movement input and starts moving if any is detected. If no input is detected, the player will idle.
 func check_for_new_move() -> void:

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6g4eoaq5v7qw"
-path="res://.godot/imported/Button_Idle01.png-c157c1796f77186231381da367ffb24a.ctex"
+uid="uid://b5ya11ubp4y0b"
+path="res://.godot/imported/wood_house.png-d5a140c85fbcbdef3ab6f0b41e3fe79f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Button_Idle01.png"
-dest_files=["res://.godot/imported/Button_Idle01.png-c157c1796f77186231381da367ffb24a.ctex"]
+source_file="res://Assets/Interior/Template/wood_house.png"
+dest_files=["res://.godot/imported/wood_house.png-d5a140c85fbcbdef3ab6f0b41e3fe79f.ctex"]
 
 [params]
 

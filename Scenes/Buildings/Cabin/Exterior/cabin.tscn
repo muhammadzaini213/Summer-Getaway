@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dh7ui5wbwx8s3"]
+
+[ext_resource type="Script" uid="uid://bj7suomqofb2r" path="res://Scenes/Buildings/Scripts/building.gd" id="1_lr2el"]
+[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Entities/Player/player.tscn" id="3_mlp72"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lr2el"]
+
+[node name="Cabin" type="Node2D" unique_id=965994362 node_paths=PackedStringArray("transition_area", "exit_point")]
+script = ExtResource("1_lr2el")
+random_interior = true
+id = 1
+transition_area = NodePath("TransitionArea")
+exit_point = NodePath("ExitPoint")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=810139438]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TransitionArea" type="Area2D" parent="." unique_id=913178538]
+position = Vector2(20, 36)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TransitionArea" unique_id=286322430]
+shape = SubResource("RectangleShape2D_lr2el")
+debug_color = Color(0.61947066, 0.40015286, 0.90537953, 0.41960785)
+
+[node name="ExitPoint" type="Node2D" parent="." unique_id=132921110]
+position = Vector2(20, 48)
+
+[node name="Player" parent="." unique_id=1635420167 instance=ExtResource("3_mlp72")]
+position = Vector2(21, 65)
+
+[connection signal="body_entered" from="TransitionArea" to="." method="_on_transition_area_body_entered"]

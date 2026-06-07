@@ -1,0 +1,37 @@
+[gd_scene format=4 uid="uid://bcgg5bk68tkih"]
+
+[ext_resource type="Script" uid="uid://c480vnyfxbx1p" path="res://Scenes/Buildings/Scripts/interior.gd" id="1_4r3i0"]
+[ext_resource type="TileSet" uid="uid://daiv4g8520u5x" path="res://Assets/Interior/Template/wood_house_tileset.tres" id="1_eqk2i"]
+[ext_resource type="PackedScene" uid="uid://dh7ui5wbwx8s3" path="res://Scenes/Buildings/Cabin/Exterior/cabin.tscn" id="2_mhpvn"]
+[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Entities/Player/player.tscn" id="2_ven1h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhpvn"]
+
+[node name="InteriorLayout1" type="Node2D" unique_id=465609245]
+script = ExtResource("1_4r3i0")
+previous_scene = ExtResource("2_mhpvn")
+
+[node name="Floor" type="TileMapLayer" parent="." unique_id=2048691335]
+position = Vector2(8, -16)
+tile_map_data = PackedByteArray("AAD///7/AAABAAEAAAAAAP//AAABAAEAAAAAAAAAAAABAAEAAAABAP//AAABAAEAAAD/////AAABAAEAAAD+////AAABAAEAAAD+//7/AAABAAEAAAD+//3/AAABAAEAAAD///3/AAABAAEAAAAAAP3/AAABAAEAAAABAP3/AAABAAEAAAABAP7/AAABAAEAAAAAAP7/AAABAAEAAAD+/wAAAAABAAEAAAD//wAAAAABAAEAAAABAAAAAAABAAEAAAA=")
+tile_set = ExtResource("1_eqk2i")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=380374580]
+position = Vector2(8, -16)
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAYAAAAAAAAAAAAAAAUAAAD+/wAAAAABAAIAAAABAAAAAAABAAIAAAD9/wAAAAAAAAIAAAD9////AAAAAAEAAAD9//7/AAAAAAEAAAD9//3/AAAAAAEAAAD9//z/AAAAAAAAAAD+//z/AAABAAAAAAD///z/AAABAAAAAAAAAPz/AAABAAAAAAACAPz/AAACAAAAAAABAPz/AAABAAAAAAACAP3/AAACAAEAAAACAP7/AAACAAEAAAACAP//AAACAAEAAAACAAAAAAACAAIAAAA=")
+tile_set = ExtResource("1_eqk2i")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2055510159]
+position = Vector2(8, -44)
+zoom = Vector2(3, 3)
+
+[node name="Player" parent="." unique_id=1635420167 instance=ExtResource("2_ven1h")]
+position = Vector2(0, -30)
+
+[node name="ExitTransition" type="Area2D" parent="." unique_id=615021253]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTransition" unique_id=1099343949]
+shape = SubResource("RectangleShape2D_mhpvn")
+
+[connection signal="body_entered" from="ExitTransition" to="." method="_on_exit_transition_body_entered"]
