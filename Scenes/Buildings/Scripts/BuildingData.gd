@@ -1,5 +1,7 @@
 extends Node
 
+var used_layouts := {}
+
 enum BuildingTypes {
 	CABIN,
 	HOTEL,
@@ -20,12 +22,25 @@ var loaded_interiors: Dictionary = {
 }
 
 func randomize_interior(type: BuildingTypes) -> PackedScene:
-	if not interior_scenes.has(type):
-		push_error("no type")
-		return null
-
 	var layouts = interior_scenes[type]
-	var keys = layouts.keys()
-	var random_key = keys.pick_random()
 
-	return layouts[random_key]
+	if !used_layouts.has(type):
+		used_layouts[type] = []
+
+	var available_keys = []
+
+	for key in layouts.keys():
+		if key not in used_layouts[type]:
+			available_keys.append(key)
+
+	# If all layouts have been used, allow reuse(only for testing 
+	#purpose, as if we do not have enough interiors, this is just for safety btw
+	if available_keys.is_empty():
+		available_keys = layouts.keys()
+
+	var chosen_key = available_keys.pick_random()
+
+	if chosen_key not in used_layouts[type]:
+		used_layouts[type].append(chosen_key)
+
+	return layouts[chosen_key]
