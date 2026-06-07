@@ -48,7 +48,8 @@ func load_dialogue_json(path: String) -> Dictionary:
 	
 func start_dialogue_from_file(path: String) -> void:
 	var data := load_dialogue_json(path)
-
+	validate_dialogue_flags(data, path)
+	
 	if data.is_empty():
 		return
 
@@ -63,10 +64,37 @@ func start_dialogue_from_file(path: String) -> void:
 	input_locked = true
 	show_dialogue_node(current_id)
 	call_deferred("unlock_dialogue_input")
-	
+
 func unlock_dialogue_input() -> void:
 	await get_tree().create_timer(0.1).timeout
 	input_locked = false
+	
+func validate_dialogue_flags(data: Dictionary, file_path: String) -> void:
+	if data.has("states"):
+		for state in data["states"]:
+			if state.has("required_flag"):
+				validate_flag_name(state["required_flag"], file_path)
+
+	if data.has("nodes"):
+		for node_id in data["nodes"].keys():
+			var node: Dictionary = data["nodes"][node_id]
+
+			if node.has("set_flag"):
+				validate_flag_name(node["set_flag"], file_path)
+
+			if node.has("remove_flag"):
+				validate_flag_name(node["remove_flag"], file_path)
+
+			if node.has("choices"):
+				for choice in node["choices"]:
+					if choice.has("required_flag"):
+						validate_flag_name(choice["required_flag"], file_path)
+
+
+func validate_flag_name(flag_name: String, file_path: String) -> void:
+	if not FlagRegistry.is_valid_flag(flag_name):
+		push_error("Unknown flag '" + flag_name + "' in " + file_path)
+		
 
 func show_dialogue_node(id: String) -> void:
 	clear_choices()
@@ -183,7 +211,6 @@ func hide_dialogue() -> void:
 func get_start_node(data: Dictionary) -> String:
 	if not data.has("states"):
 		return "start"
-
 	for state in data["states"]:
 		if state.has("required_flag"):
 			if GameState.has_flag(state["required_flag"]):

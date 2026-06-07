@@ -16,7 +16,7 @@
 	"nodes": {
 		"start": {
 			"speaker": "Old Man",
-			"portrait": "res://Levels/Testers/Dialogue/placeholder_old_man.png",
+			"portrait": "res://Assets/placeholder/placeholder_old_man.png",
 			"text": "Please remove the cursed rock from the road.",
 			"set_flag": "old_man_requested_rock",
 			"next": "end"
@@ -24,7 +24,7 @@
 
 		"waiting": {
 			"speaker": "Old Man",
-			"portrait": "res://Levels/Testers/Dialogue/placeholder_old_man.png",
+			"portrait": "res://Assets/placeholder/placeholder_old_man.png",
 			"text": "The rock is still blocking the path.",
 			"choices": [
 				{
@@ -40,7 +40,7 @@
 	
 		"thanks": {
 			"speaker": "Old Man",
-			"portrait": "res://Levels/Testers/Dialogue/placeholder_old_man.png",
+			"portrait": "res://Assets/placeholder/placeholder_old_man.png",
 			"text": "Thank you. The path is clear now.",
 			"set_flag": "rock_removed",
 			"next": "end"

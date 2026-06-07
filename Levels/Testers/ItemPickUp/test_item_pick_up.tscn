@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bl2twxcjcp632"]
+
+[ext_resource type="PackedScene" uid="uid://btdo1osi1br25" path="res://Objects/PickUpItems/ancient_coin.tscn" id="1_thjae"]
+[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Entities/Player/player.tscn" id="2_xy4jy"]
+[ext_resource type="PackedScene" uid="uid://cxhkloos1en6b" path="res://Global/Inventory/inventory.tscn" id="3_xy4jy"]
+
+[node name="TestInteractable" type="Node2D" unique_id=712949273]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1688093262]
+zoom = Vector2(3, 3)
+
+[node name="AncientCoin" parent="." unique_id=439710376 instance=ExtResource("1_thjae")]
+position = Vector2(23, 1)
+
+[node name="Player" parent="." unique_id=1635420167 instance=ExtResource("2_xy4jy")]
+position = Vector2(-24, 0)
+
+[node name="Inventory" parent="." unique_id=408964462 instance=ExtResource("3_xy4jy")]
+
+[connection signal="body_entered" from="AncientCoin" to="AncientCoin" method="_on_body_entered"]
+[connection signal="body_exited" from="AncientCoin" to="AncientCoin" method="_on_body_exited"]
