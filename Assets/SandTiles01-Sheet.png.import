@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b76weuc2q4dtv"
-path="res://.godot/imported/placeholder_old_man.png-1dbfacc950d26e41cb7c20db189a7ff4.ctex"
+uid="uid://3m0getv6rjvi"
+path="res://.godot/imported/SandTiles01-Sheet.png-43741bd1f6e3a03de7446f9ce963680a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Testers/Dialogue/placeholder_old_man.png"
-dest_files=["res://.godot/imported/placeholder_old_man.png-1dbfacc950d26e41cb7c20db189a7ff4.ctex"]
+source_file="res://Assets/SandTiles01-Sheet.png"
+dest_files=["res://.godot/imported/SandTiles01-Sheet.png-43741bd1f6e3a03de7446f9ce963680a.ctex"]
 
 [params]
 

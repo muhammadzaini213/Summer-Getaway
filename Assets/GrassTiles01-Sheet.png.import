@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b76weuc2q4dtv"
-path="res://.godot/imported/placeholder_old_man.png-1dbfacc950d26e41cb7c20db189a7ff4.ctex"
+uid="uid://bfu6i544t64gc"
+path="res://.godot/imported/GrassTiles01-Sheet.png-6688c0f614cde1c7b097f2c8689270ce.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Testers/Dialogue/placeholder_old_man.png"
-dest_files=["res://.godot/imported/placeholder_old_man.png-1dbfacc950d26e41cb7c20db189a7ff4.ctex"]
+source_file="res://Assets/GrassTiles01-Sheet.png"
+dest_files=["res://.godot/imported/GrassTiles01-Sheet.png-6688c0f614cde1c7b097f2c8689270ce.ctex"]
 
 [params]
 

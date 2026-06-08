@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b76weuc2q4dtv"
-path="res://.godot/imported/placeholder_old_man.png-1dbfacc950d26e41cb7c20db189a7ff4.ctex"
+uid="uid://c46w0i1sh6nrh"
+path="res://.godot/imported/ColorTilesPallete01.png-6f0e5d0dfece00fbafecd1905f7fc3c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Testers/Dialogue/placeholder_old_man.png"
-dest_files=["res://.godot/imported/placeholder_old_man.png-1dbfacc950d26e41cb7c20db189a7ff4.ctex"]
+source_file="res://Assets/ColorTilesPallete01.png"
+dest_files=["res://.godot/imported/ColorTilesPallete01.png-6f0e5d0dfece00fbafecd1905f7fc3c6.ctex"]
 
 [params]
 

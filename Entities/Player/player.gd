@@ -34,7 +34,7 @@ var target_position: Vector2
 #endregion
 
 
-func ready() -> void:
+func _ready() -> void:
 	target_position = global_position
 
 
@@ -76,6 +76,11 @@ func start_move(direction: Vector2) -> void:
 	facing_direction = Helpers.movement_direction_to_string(direction)
 
 	target_position = global_position + direction * grid_size
+	if not _can_walk_to(target_position):
+		target_position = global_position
+		idle_player()
+		return
+
 	is_moving = true
 
 	current_state = PlayerState.WALK
@@ -107,3 +112,11 @@ func idle_player() -> void:
 		animated_sprite_2d.play("idle_" + facing_direction)
 	else:
 		animated_sprite_2d.play("idle_down")
+
+
+func _can_walk_to(world_position: Vector2) -> bool:
+	for terrain in get_tree().get_nodes_in_group("terrain"):
+		if terrain.has_method("is_walkable_world_position"):
+			return terrain.is_walkable_world_position(world_position)
+
+	return true
