@@ -1,10 +1,10 @@
 extends Node2D
 
 const TILE_SIZE := 16
-const WATER_TILE := Vector2i(1, 1)
-const GRASS_TILES := [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 1)]
-const SAND_TILES := [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 1)]
-const DIRT_TILES := [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(1, 1), Vector2i(0, 2)]
+const WATER_FILL_TILE := Vector2i(0, 0)
+const GRASS_FILL_TILE := Vector2i(0, 0)
+const SAND_FILL_TILE := Vector2i(0, 0)
+const DIRT_FILL_TILE := Vector2i(0, 0)
 
 const MAP_MIN_X := -36
 const MAP_MAX_X := 38
@@ -89,7 +89,7 @@ func _is_cutaway(cell: Vector2i) -> bool:
 func _paint_water() -> void:
 	for y in range(MAP_MIN_Y, MAP_MAX_Y + 1):
 		for x in range(MAP_MIN_X, MAP_MAX_X + 1):
-			_add_tile(_water_tiles, preload("res://Assets/WaterTiles01-Sheet.png"), WATER_TILE, Vector2i(x, y))
+			_add_tile(_water_tiles, preload("res://Assets/WaterTiles01-Sheet.png"), WATER_FILL_TILE, Vector2i(x, y))
 
 
 func _paint_land() -> void:
@@ -98,19 +98,28 @@ func _paint_land() -> void:
 		var atlas_cell: Vector2i
 		if _is_shore(cell):
 			texture = preload("res://Assets/SandTiles01-Sheet.png")
-			atlas_cell = _pick_tile(SAND_TILES, cell)
+			atlas_cell = SAND_FILL_TILE
 		elif _is_soil_patch(cell):
 			texture = preload("res://Assets/DirtTiles01-Sheet.png")
-			atlas_cell = _pick_tile(DIRT_TILES, cell)
+			atlas_cell = DIRT_FILL_TILE
 		else:
 			texture = preload("res://Assets/GrassTiles01-Sheet.png")
-			atlas_cell = _pick_tile(GRASS_TILES, cell)
+			atlas_cell = GRASS_FILL_TILE
 
 		_add_tile(_land_tiles, texture, atlas_cell, cell)
 
 
 func _is_shore(cell: Vector2i) -> bool:
-	for direction in [Vector2i.LEFT, Vector2i.RIGHT, Vector2i.UP, Vector2i.DOWN]:
+	for direction in [
+		Vector2i.LEFT,
+		Vector2i.RIGHT,
+		Vector2i.UP,
+		Vector2i.DOWN,
+		Vector2i(-1, -1),
+		Vector2i(1, -1),
+		Vector2i(-1, 1),
+		Vector2i(1, 1),
+	]:
 		if not _land_cells.has(cell + direction):
 			return true
 	return false
@@ -122,11 +131,6 @@ func _is_soil_patch(cell: Vector2i) -> bool:
 	var cliff_patch: bool = cell.x >= -5 and cell.x <= 4 and cell.y <= -7
 	var soft_noise: bool = int(abs(cell.x * 31 + cell.y * 17)) % 23 == 0
 	return central_path or dock_ground or cliff_patch or soft_noise
-
-
-func _pick_tile(options: Array, cell: Vector2i) -> Vector2i:
-	var index := int(abs(cell.x * 19 + cell.y * 37)) % options.size()
-	return options[index]
 
 
 func _add_tile(parent: Node2D, atlas: Texture2D, atlas_cell: Vector2i, cell: Vector2i) -> void:
