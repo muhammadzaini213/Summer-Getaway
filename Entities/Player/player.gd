@@ -85,8 +85,7 @@ func start_move(direction: Vector2) -> void:
 
 	current_state = PlayerState.WALK
 
-	if animated_sprite_2d.animation != str("walk_" + facing_direction):
-		animated_sprite_2d.play("walk_" + facing_direction)
+	_play_direction_animation("walk")
 
 
 # Moves the player towards the target position on a grid.
@@ -108,10 +107,7 @@ func idle_player() -> void:
 		return
 
 	current_state = PlayerState.IDLE
-	if facing_direction != "":
-		animated_sprite_2d.play("idle_" + facing_direction)
-	else:
-		animated_sprite_2d.play("idle_down")
+	_play_direction_animation("idle")
 
 
 func _can_walk_to(world_position: Vector2) -> bool:
@@ -120,3 +116,18 @@ func _can_walk_to(world_position: Vector2) -> bool:
 			return terrain.is_walkable_world_position(world_position)
 
 	return true
+
+
+func _play_direction_animation(prefix: String) -> void:
+	var animation_direction := facing_direction
+	animated_sprite_2d.flip_h = false
+
+	if animation_direction == "left":
+		animation_direction = "right"
+		animated_sprite_2d.flip_h = true
+	elif animation_direction == "":
+		animation_direction = "down"
+
+	var animation_name := "%s_%s" % [prefix, animation_direction]
+	if animated_sprite_2d.animation != animation_name:
+		animated_sprite_2d.play(animation_name)
