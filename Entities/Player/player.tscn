@@ -3,15 +3,65 @@
 [ext_resource type="Script" uid="uid://cijrrmdrok654" path="res://Entities/Player/player.gd" id="1_l8h54"]
 [ext_resource type="PackedScene" uid="uid://mcak1od0kcss" path="res://Entities/Player/Components/interactor.tscn" id="3_lu8i8"]
 [ext_resource type="Texture2D" uid="uid://dd0ahmnqdfjgj" path="res://Entities/Player/Assets/player.png" id="3_tekja"]
+[ext_resource type="Texture2D" uid="uid://bp56n8ejsdf6t" path="res://Entities/Player/Assets/player_idle_front_sheet.png" id="4_tekja"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ntmi"]
 radius = 10.049875
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5c2io"]
+atlas = ExtResource("4_tekja")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wf4l"]
+atlas = ExtResource("4_tekja")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01a4e"]
+atlas = ExtResource("4_tekja")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a1se"]
+atlas = ExtResource("4_tekja")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lub02"]
+atlas = ExtResource("4_tekja")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1y6q"]
+atlas = ExtResource("4_tekja")
+region = Rect2(160, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap3xn"]
+atlas = ExtResource("4_tekja")
+region = Rect2(192, 0, 32, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4ntmi"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_tekja")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5c2io")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wf4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01a4e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7a1se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lub02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1y6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap3xn")
 }],
 "loop": true,
 "name": &"idle_down",

@@ -1,0 +1,194 @@
+﻿
+
+atlas = ExtResource("1_idle")
+region = Rect2(0, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(32, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(64, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(96, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(128, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(160, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(192, 0, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(0, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(32, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(64, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(96, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(128, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(160, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(192, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(0, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(32, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(64, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(96, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(128, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(160, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(192, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(0, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(32, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(64, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(96, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(128, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(160, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(192, 256, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(0, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(32, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(64, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(96, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(128, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(160, 0, 32, 64)
+
+atlas = ExtResource("1_idle")
+region = Rect2(192, 0, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(0, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(32, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(64, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(96, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(128, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(160, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(192, 64, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(0, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(32, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(64, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(96, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(128, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(160, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(192, 128, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(0, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(32, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(64, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(96, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(128, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(160, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(192, 256, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(0, 320, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(32, 320, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(64, 320, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(96, 320, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(128, 320, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(160, 320, 32, 64)
+
+atlas = ExtResource("2_rotate")
+region = Rect2(192, 320, 32, 64)
+
+[resource]
+animations = [
+]
