@@ -5,8 +5,8 @@ signal accusation_finished(suspect_id: String, was_correct: bool)
 signal accusation_closed
 
 const MAYOR_ICON_PATH := "res://icon.svg"
-const FALLBACK_MAYOR_ICON_PATH := "res://Entities/Player/Assets/placeholder_human.png"
-const FINAL_FIGHT_SCENE_PATH := "res://Levels/FinalFight/final_fight.tscn"
+const FALLBACK_MAYOR_ICON_PATH := "res://Assets/Assets/placeholder_human.png"
+const FINAL_FIGHT_SCENE_PATH := "res://Scenes/Worlds/Levels/final_fight.tscn"
 
 var correct_suspect_id := "suspect_03"
 var suspects: Array[Dictionary] = [

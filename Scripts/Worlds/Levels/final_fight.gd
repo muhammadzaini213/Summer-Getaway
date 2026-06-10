@@ -1,7 +1,7 @@
 extends Node2D
 
-const BULLET_SCRIPT := preload("res://Levels/FinalFight/final_fight_bullet.gd")
-const PLAYER_TEXTURE := preload("res://Entities/Player/Assets/placeholder_human.png")
+const BULLET_SCRIPT := preload("res://Scripts/Worlds/Levels/final_fight_bullet.gd")
+const PLAYER_TEXTURE := preload("res://Assets/Assets/placeholder_human.png")
 const KILLER_TEXTURE := preload("res://Screenshot 2026-06-07 182336.png")
 
 const PLAYER_ID := "player"
