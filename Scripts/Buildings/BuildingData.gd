@@ -1,24 +1,22 @@
 extends Node
 
+
 var used_layouts := {}
 
 enum BuildingTypes {
 	CABIN,
 	HOTEL,
 }
-var interior_scenes: Dictionary = {
 
+var interior_scenes: Dictionary = {
 	BuildingTypes.CABIN: {
 		"layout_one": preload("uid://bcgg5bk68tkih"),
 		"layout_two": preload("uid://b3k2d5sojvah6"),
 	}
-
 }
 
 
 var loaded_interiors: Dictionary = {
-
-
 }
 
 func randomize_interior(type: BuildingTypes) -> PackedScene:

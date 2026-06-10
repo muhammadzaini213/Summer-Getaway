@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Building
+
 @export_category("Options")
 @export var random_interior: bool = false
 @export_category("Data")

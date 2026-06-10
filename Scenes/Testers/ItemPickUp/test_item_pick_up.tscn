@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bl2twxcjcp632"]
 
-[ext_resource type="PackedScene" uid="uid://btdo1osi1br25" path="res://Objects/PickUpItems/ancient_coin.tscn" id="1_thjae"]
-[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Entities/Player/player.tscn" id="2_xy4jy"]
+[ext_resource type="PackedScene" uid="uid://btdo1osi1br25" path="res://Scenes/Entities/Items/ancient_coin.tscn" id="1_thjae"]
+[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="2_xy4jy"]
 [ext_resource type="PackedScene" uid="uid://cxhkloos1en6b" path="res://Global/Inventory/inventory.tscn" id="3_xy4jy"]
 
 [node name="TestInteractable" type="Node2D" unique_id=712949273]

@@ -11,15 +11,15 @@ config_version=5
 [application]
 
 config/name="Summer-Getaway"
-run/main_scene="res://Levels/Island/island.tscn"
+run/main_scene="res://Scenes/Worlds/Levels/island.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]
 
 Helpers="*uid://c0twhblsjel4p"
 GameState="*uid://bpfeiksga5w0a"
-DaySystem="*res://Global/DaySystem/day_system.gd"
-AccusationSystem="*res://Global/AccusationSystem/accusation_system.gd"
+DaySystem="*res://Global/day_system.gd"
+AccusationSystem="*res://Global/accusation_system.gd"
 GameEvents="*uid://dujfiroijr18g"
 BuildingData="*uid://cn0614at5x8rl"
 FlagRegistry="*uid://cm156pgaikll"

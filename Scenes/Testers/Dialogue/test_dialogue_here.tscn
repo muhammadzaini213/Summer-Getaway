@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bavoirtkoowjo" path="res://Scenes/Testers/Dialogue/test_npc_script.gd" id="1_2t8fw"]
 [ext_resource type="PackedScene" uid="uid://djg6aqf33ck20" path="res://Global/Dialogue/dialogue_manager.tscn" id="2_vw28e"]
-[ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Objects/Interactables/interactable.tscn" id="3_7bcdn"]
-[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Entities/Player/player.tscn" id="4_up6md"]
+[ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="3_7bcdn"]
+[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="4_up6md"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r2si6"]
 

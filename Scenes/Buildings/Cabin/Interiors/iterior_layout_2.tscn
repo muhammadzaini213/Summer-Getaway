@@ -1,8 +1,8 @@
 [gd_scene format=4 uid="uid://b3k2d5sojvah6"]
 
 [ext_resource type="TileSet" uid="uid://daiv4g8520u5x" path="res://Assets/Interior/Template/wood_house_tileset.tres" id="1_8e60t"]
-[ext_resource type="Script" uid="uid://c480vnyfxbx1p" path="res://Scenes/Buildings/Scripts/interior.gd" id="1_jmpo3"]
-[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Entities/Player/player.tscn" id="2_7by3t"]
+[ext_resource type="Script" uid="uid://c480vnyfxbx1p" path="res://Scripts/Buildings/interior.gd" id="1_jmpo3"]
+[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="2_7by3t"]
 [ext_resource type="PackedScene" uid="uid://dh7ui5wbwx8s3" path="res://Scenes/Buildings/Cabin/Exterior/cabin.tscn" id="2_h3w6e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3w6e"]
