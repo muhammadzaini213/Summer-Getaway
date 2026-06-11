@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://cpvtnxvvm8wnd"]
+
+[ext_resource type="AudioStream" uid="uid://btdfxvqotjach" path="res://Assets/Audio/mus_menu.ogg" id="1_28flt"]
+[ext_resource type="Script" uid="uid://xctmcxyibaph" path="res://Scenes/main_menu.gd" id="1_48xlc"]
+
+[node name="MainMenu" type="Control" unique_id=1631494149]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_48xlc")
+
+[node name="BackGround" type="ColorRect" parent="." unique_id=1955703270]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45452452, 0.45452416, 0.45452422, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1805309201]
+stream = ExtResource("1_28flt")
+autoplay = true
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=648939375]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1103864055]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=511803627]
+layout_mode = 2
+text = "Summer Getaway"
+
+[node name="PlayButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1923030086]
+layout_mode = 2
+text = "Play"
+
+[node name="CreditsButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1417460510]
+layout_mode = 2
+text = "Credits"
+
+[node name="ExitButton" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1276367202]
+layout_mode = 2
+text = "Exit"
+
+[node name="CreditsLabel" type="Label" parent="CenterContainer/VBoxContainer" unique_id=1625921192]
+visible = false
+layout_mode = 2
+text = "Made by Pizza team"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/CreditsButton" to="." method="_on_credit_button_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
