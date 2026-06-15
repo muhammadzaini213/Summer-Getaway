@@ -1,0 +1,11 @@
+~ start
+Nathan: i feel like she faked her death.
+Nathan: Here are some choices.
+- why would she fake her death
+	Nathan: You we hear rumors that she wants to be left alone with her lover. so this could be a chance..
+-  so the corpes wasnt her
+	Nathan: could be something else or an iditcal twin idk.
+- Start again => start
+- End the conversation => END
+Nathan: For more information see the online documentation.
+=> END
