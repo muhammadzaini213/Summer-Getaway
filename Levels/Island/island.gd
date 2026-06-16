@@ -193,11 +193,27 @@ func _add_tree_details() -> void:
 		child.queue_free()
 
 	var tree_cells := [
+<<<<<<<< Updated upstream:Levels/Island/island.gd
 		Vector2i(-35, -5), Vector2i(-33, 5), Vector2i(-24, -3),
 		Vector2i(-15, -5), Vector2i(-6, -12), Vector2i(5, -13),
 		Vector2i(7, -3), Vector2i(18, 5), Vector2i(23, -2),
 		Vector2i(32, -5), Vector2i(38, 4), Vector2i(2, 12),
 	]
+========
+		Vector2i(-2,23), Vector2i(6,24), Vector2i(11,35),
+		Vector2i(-33,29), Vector2i(-43,29), Vector2i(-50,27),
+		Vector2i(-56,43), Vector2i(-57,47), Vector2i(-56,23),
+		Vector2i(-58,8), Vector2i(-54,-3), Vector2i(-49,-8),
+		Vector2i(-57,-15), Vector2i(-42,-21), Vector2i(-31,-21),
+		Vector2i(-23,-20),Vector2i(-6,-15),Vector2i(-17,-9),
+		Vector2i(11,-17),Vector2i(19,-17),Vector2i(25,-20),
+		Vector2i(64,-40),Vector2i(65,-39),Vector2i(104,-37),
+		Vector2i(117,-19),Vector2i(68,42),Vector2i(41,36),
+		Vector2i(57,44),Vector2i(68,42),Vector2i(115,89),
+		Vector2i(59,56),Vector2i(24,27),Vector2i(34,20),
+		Vector2i(21,18)
+		]
+>>>>>>>> Stashed changes:Scripts/Worlds/Levels/island.gd
 
 	for cell in tree_cells:
 		if not _land_cells.has(cell):

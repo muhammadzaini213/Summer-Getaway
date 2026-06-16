@@ -23,7 +23,11 @@ sprite_frames = ExtResource("2_frames")
 animation = &"idle_down"
 autoplay = "idle_down"
 
+<<<<<<<< Updated upstream:Entities/Player/player.tscn
 [node name="FollowCamera" type="Camera2D" parent="." unique_id=1569728764]
+========
+[node name="Camera2D" type="Camera2D" parent="." unique_id=629478706]
+>>>>>>>> Stashed changes:Scenes/Entities/player.tscn
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
