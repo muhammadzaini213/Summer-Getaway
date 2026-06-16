@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bf6xbnjn1ect0"]
+[gd_scene format=3 uid="uid://c4a7j5m0wlo3h"]
 
 [ext_resource type="Script" uid="uid://bwv23tabywmyo" path="res://Scripts/Entities/NPCs/mayor_accusation.gd" id="1_rl7hx"]
 [ext_resource type="Texture2D" uid="uid://bkrofogkmyrsk" path="res://Screenshot 2026-06-07 182336.png" id="2_wv65f"]
