@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn5wx7yq8u14t"]
+
+[ext_resource type="Script" uid="uid://cijrrmdrok654" path="res://Entities/Player/player.gd" id="1_l8h54"]
+[ext_resource type="SpriteFrames" uid="uid://djo5v0rarg58l" path="res://Entities/Player/Assets/player_sprite_frames.tres" id="2_frames"]
+[ext_resource type="PackedScene" uid="uid://mcak1od0kcss" path="res://Entities/Player/Components/interactor.tscn" id="3_lu8i8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ntmi"]
+radius = 10.049875
+
+[node name="Player" type="CharacterBody2D" unique_id=1635420167 groups=["player"]]
+collision_mask = 3
+script = ExtResource("1_l8h54")
+
+[node name="Interactor" parent="." unique_id=1940396334 instance=ExtResource("3_lu8i8")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1385289598]
+shape = SubResource("CircleShape2D_4ntmi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=682516577]
+position = Vector2(0, -8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("2_frames")
+animation = &"idle_down"
+autoplay = "idle_down"
+
+[node name="FollowCamera" type="Camera2D" parent="." unique_id=1569728764]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.6
+drag_top_margin = 0.6
+drag_right_margin = 0.6
+drag_bottom_margin = 0.6
