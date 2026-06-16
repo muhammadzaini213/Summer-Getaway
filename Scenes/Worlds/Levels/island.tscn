@@ -734,7 +734,7 @@ scale = Vector2(0.52, 0.52)
 sprite_frames = SubResource("SpriteFrames_fhyuu")
 animation = &"npc1"
 autoplay = "npc1"
-frame_progress = 0.5634459
+frame_progress = 0.9367535
 
 [node name="npc2" type="Node2D" parent="." unique_id=46176577]
 position = Vector2(-703, 88)

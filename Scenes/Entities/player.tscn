@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bn5wx7yq8u14t"]
+
+[ext_resource type="Script" uid="uid://cijrrmdrok654" path="res://Scripts/Entities/player.gd" id="1_qbyki"]
+[ext_resource type="PackedScene" uid="uid://mcak1od0kcss" path="res://Scenes/Components/interactor.tscn" id="2_svftf"]
+[ext_resource type="SpriteFrames" uid="uid://djo5v0rarg58l" path="res://Assets/Assets/player_sprite_frames.tres" id="3_a1rq5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4ntmi"]
+radius = 10.049875
+
+[node name="Player" type="CharacterBody2D" unique_id=1635420167 groups=["player"]]
+collision_mask = 3
+script = ExtResource("1_qbyki")
+
+[node name="Interactor" parent="." unique_id=1940396334 instance=ExtResource("2_svftf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1385289598]
+shape = SubResource("CircleShape2D_4ntmi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=682516577]
+position = Vector2(0, -8)
+scale = Vector2(0.5, 0.5)
+sprite_frames = ExtResource("3_a1rq5")
+animation = &"idle_right"
+autoplay = "idle_down"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=629478706]
+zoom = Vector2(4, 4)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
