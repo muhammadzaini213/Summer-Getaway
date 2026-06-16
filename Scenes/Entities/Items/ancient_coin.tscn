@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://btdo1osi1br25"]
+
+[ext_resource type="Script" uid="uid://dy0j21doivb2c" path="res://Scripts/Entities/Items/ancient_coin.gd" id="1_am2gn"]
+[ext_resource type="Texture2D" uid="uid://kucajjs50m3s" path="res://Assets/placeholder/ancient_coin_placeholder.png" id="2_dupgu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ubq2p"]
+radius = 32.06244
+
+[node name="AncientCoin" type="Area2D" unique_id=394577225]
+script = ExtResource("1_am2gn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=766099525]
+texture = ExtResource("2_dupgu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1430056370]
+shape = SubResource("CircleShape2D_ubq2p")

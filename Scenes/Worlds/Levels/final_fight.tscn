@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bocgtu3nqkyfm"]
+
+[ext_resource type="Script" uid="uid://cg5v1jjkupqal" path="res://Scripts/Worlds/Levels/final_fight.gd" id="1_udru2"]
+
+[node name="FinalFight" type="Node2D" unique_id=1512664108]
+script = ExtResource("1_udru2")

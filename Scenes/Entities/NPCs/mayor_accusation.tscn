@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c4a7j5m0wlo3h"]
+
+[ext_resource type="Script" uid="uid://bwv23tabywmyo" path="res://Scripts/Entities/NPCs/mayor_accusation.gd" id="1_rl7hx"]
+[ext_resource type="Texture2D" uid="uid://bkrofogkmyrsk" path="res://Screenshot 2026-06-07 182336.png" id="2_wv65f"]
+[ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="3_ytck0"]
+
+[node name="MayorAccusation" type="Node2D" unique_id=1338419118]
+script = ExtResource("1_rl7hx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169445677]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_wv65f")
+
+[node name="Interactable" parent="." unique_id=1139263073 instance=ExtResource("3_ytck0")]
+lock_player = true

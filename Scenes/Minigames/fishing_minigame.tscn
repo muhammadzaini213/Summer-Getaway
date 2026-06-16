@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bc5nai763ei53"]
+
+[ext_resource type="Script" uid="uid://c528tjo6b17mn" path="res://Scenes/Minigames/fishing_minigame.gd" id="1_6hj8h"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_6hj8h"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_b8hsq"]
+
+[node name="FishingMinigame" type="Control" unique_id=1597625037]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6hj8h")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1211554157]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.43134022, 0.43134025, 0.43134025, 1)
+
+[node name="FishTarget" type="TextureRect" parent="." unique_id=298898648]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_left = 433.0
+offset_top = 362.0
+offset_right = 481.0
+offset_bottom = 410.0
+texture = SubResource("ViewportTexture_6hj8h")
+
+[node name="Hook" type="TextureRect" parent="." unique_id=1493441396]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 0
+offset_left = 548.0
+offset_top = 58.0
+offset_right = 588.0
+offset_bottom = 98.0
+texture = SubResource("ViewportTexture_b8hsq")
+
+[node name="Line" type="Line2D" parent="." unique_id=1463860827]
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=835799019]
+layout_mode = 0
+offset_left = 455.0
+offset_top = 18.0
+offset_right = 688.0
+offset_bottom = 45.0
+
+[node name="CounterLabel" type="Label" parent="." unique_id=1288810771]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 62.0
+offset_right = 307.0
+offset_bottom = 97.0
+
+[node name="InstructionLabel" type="Label" parent="." unique_id=297583269]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 14.0
+offset_right = 298.0
+offset_bottom = 40.0
+
+[node name="ExitButton" type="Button" parent="." unique_id=1393766236]
+layout_mode = 0
+offset_left = 1086.0
+offset_top = 5.0
+offset_right = 1138.0
+offset_bottom = 29.0
+text = "Exit"
+
+[connection signal="pressed" from="ExitButton" to="." method="close_minigame"]
