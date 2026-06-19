@@ -1,11 +1,11 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://6l2lhr3nm35v"]
 
 [ext_resource type="Script" uid="uid://bj7suomqofb2r" path="res://Scripts/Buildings/building.gd" id="1_48txt"]
 [ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="2_tgshq"]
 
-[node name="IslandHouseEntrance" type="Node2D" node_paths=PackedStringArray("interactable")]
+[node name="IslandHouseEntrance" type="Node2D" unique_id=141093585 node_paths=PackedStringArray("interactable")]
 script = ExtResource("1_48txt")
 random_interior = true
 interactable = NodePath("Interactable")
 
-[node name="Interactable" parent="." instance=ExtResource("2_tgshq")]
+[node name="Interactable" parent="." unique_id=1367219693 instance=ExtResource("2_tgshq")]

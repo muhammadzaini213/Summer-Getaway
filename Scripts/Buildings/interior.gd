@@ -1,10 +1,13 @@
 extends Node2D
 
-@export var previous_scene: PackedScene
+@export_file_path("*.tscn") var previous_scene: String
 
-func _on_exit_transition_body_entered(body: Node2D) -> void:
-	if not body.is_in_group("player"):
-		return
+@onready var _player: CharacterBody2D = $Player
+@onready var _interactable: Interactable = $Interactable
 
-	if previous_scene:
-		GameEvents.goto_scene(previous_scene)
+func _ready() -> void:
+	_interactable.interact.connect(_on_interact)
+
+func _on_interact() -> void:
+	get_tree().change_scene_to_file(previous_scene)
+	_interactable.finish_interact.emit()
