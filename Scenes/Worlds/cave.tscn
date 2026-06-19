@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cd20bqb84q7v1"]
 
 [ext_resource type="Script" uid="uid://d2m1n770k61lt" path="res://Scenes/Worlds/cave.gd" id="1_oo41j"]
-[ext_resource type="Texture2D" uid="uid://w6a120orjuce" path="res://icon.svg" id="2_b5dil"]
 [ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="3_od6co"]
 [ext_resource type="Texture2D" uid="uid://bt8c31ldwx1w7" path="res://Assets/cave floor.png" id="4_b5dil"]
 [ext_resource type="Texture2D" uid="uid://bnl7njn2cqr4i" path="res://Assets/cave wall back with entrance.png" id="5_od6co"]
@@ -12,7 +11,16 @@
 size = Vector2(119.06976, 130.1695)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sifxj"]
-size = Vector2(293, 22)
+size = Vector2(130, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkr8j"]
+size = Vector2(125, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_octiu"]
+size = Vector2(17, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5r8db"]
+size = Vector2(274, 15.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qebwy"]
 size = Vector2(27, 168.5)
@@ -28,9 +36,8 @@ script = ExtResource("1_oo41j")
 [node name="MurderScene" type="Sprite2D" parent="." unique_id=1694915271]
 
 [node name="ExitRocks" type="Sprite2D" parent="." unique_id=1649233964]
-position = Vector2(-114.75, -72.75)
+position = Vector2(-8, 92.999985)
 scale = Vector2(0.16796875, 0.23046876)
-texture = ExtResource("2_b5dil")
 
 [node name="Area2D" type="Area2D" parent="ExitRocks" unique_id=1008604850]
 
@@ -41,19 +48,32 @@ shape = SubResource("RectangleShape2D_mt2ob")
 
 [node name="Player" parent="." unique_id=1635420167 instance=ExtResource("3_od6co")]
 z_index = 2
+position = Vector2(-9, 60)
 
 [node name="Boundary" type="StaticBody2D" parent="." unique_id=2059481303]
 
 [node name="top" type="CollisionShape2D" parent="Boundary" unique_id=1264663769]
-position = Vector2(0.5, -91)
+position = Vector2(-81, 84.5)
 shape = SubResource("RectangleShape2D_sifxj")
 
+[node name="top2" type="CollisionShape2D" parent="Boundary" unique_id=33187149]
+position = Vector2(66.5, 84.5)
+shape = SubResource("RectangleShape2D_gkr8j")
+
+[node name="top4" type="CollisionShape2D" parent="Boundary" unique_id=1325676111]
+position = Vector2(-6.5, 88.5)
+shape = SubResource("RectangleShape2D_octiu")
+
+[node name="top3" type="CollisionShape2D" parent="Boundary" unique_id=1446898352]
+position = Vector2(-7, -91.75)
+shape = SubResource("RectangleShape2D_5r8db")
+
 [node name="left" type="CollisionShape2D" parent="Boundary" unique_id=770097635]
-position = Vector2(-158, -0.25)
+position = Vector2(-147, -0.25)
 shape = SubResource("RectangleShape2D_qebwy")
 
 [node name="right" type="CollisionShape2D" parent="Boundary" unique_id=1611637625]
-position = Vector2(158, -5)
+position = Vector2(137, -5)
 shape = SubResource("RectangleShape2D_56xs4")
 
 [node name="Floor" type="Sprite2D" parent="." unique_id=20327464]

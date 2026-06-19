@@ -15,6 +15,8 @@ func _ready() -> void:
 		activate()
 	else:
 		deactivate()
+	
+	user = get_tree().get_first_node_in_group("player")
 
 
 func start_interaction() -> void:
