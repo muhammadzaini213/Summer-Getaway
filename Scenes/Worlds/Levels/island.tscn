@@ -3,27 +3,32 @@
 [ext_resource type="Script" uid="uid://dpiqkujx8ogx8" path="res://Scripts/Worlds/Levels/island.gd" id="1_uaq31"]
 [ext_resource type="TileSet" uid="uid://cxmav4tgxv2ny" path="res://Resources/terrain_tileset.tres" id="2_6cy2b"]
 [ext_resource type="Texture2D" uid="uid://crjjec4i31nco" path="res://20260606_104115.webp" id="2_r5tus"]
-[ext_resource type="Texture2D" uid="uid://lfg3h40rnk0p" path="res://Assets/decorations.png" id="3_pco4b"]
+[ext_resource type="Texture2D" uid="uid://dtcuhn1mpp1y1" path="res://Assets/decorations.png" id="3_pco4b"]
 [ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="3_r5tus"]
 [ext_resource type="PackedScene" uid="uid://3vwmhg4g4ua6" path="res://Scenes/Buildings/Cabin/Interiors/house_1.tscn" id="7_4h4wm"]
-[ext_resource type="Texture2D" uid="uid://b3frl7lvhfvt4" path="res://Assets/Finished Houses/largeredhouse.png" id="7_aboc6"]
+[ext_resource type="Texture2D" uid="uid://cv3bo0ovtq3nr" path="res://Assets/Finished Houses/largeredhouse.png" id="7_aboc6"]
 [ext_resource type="PackedScene" uid="uid://6l2lhr3nm35v" path="res://Scenes/Buildings/island_house_entrance.tscn" id="7_ge070"]
-[ext_resource type="Texture2D" uid="uid://4t1bf01c650y" path="res://Assets/Finished Houses/bluehouse.png" id="8_cixay"]
+[ext_resource type="Texture2D" uid="uid://byiunf0r6xqka" path="res://Assets/Finished Houses/bluehouse.png" id="8_cixay"]
 [ext_resource type="Texture2D" uid="uid://bept6x72ivl7q" path="res://sprite npcs idle-Sheet 1.png" id="8_rboht"]
 [ext_resource type="Script" uid="uid://t7eeub3th3c6" path="res://Scripts/Entities/NPCs/dialogue_npc.gd" id="9_dialogue"]
-[ext_resource type="Texture2D" uid="uid://d1trbf712cs6i" path="res://Assets/Finished Houses/smallredhouse.png" id="9_lm2co"]
-[ext_resource type="Texture2D" uid="uid://bfmcpsf8ho1xp" path="res://Assets/Finished Houses/smallgreenhouse.png" id="10_2f3mm"]
+[ext_resource type="Texture2D" uid="uid://cqkqcam3wgu75" path="res://Assets/Finished Houses/smallredhouse.png" id="9_lm2co"]
+[ext_resource type="Texture2D" uid="uid://dp5jwsmv0b5tc" path="res://Assets/Finished Houses/smallgreenhouse.png" id="10_2f3mm"]
 [ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="10_interactable"]
-[ext_resource type="Texture2D" uid="uid://coffy855422gv" path="res://Assets/Finished Houses/largegreenhouse.png" id="11_2f3mm"]
+[ext_resource type="Texture2D" uid="uid://cuwhsdj63yoje" path="res://Assets/Finished Houses/largegreenhouse.png" id="11_2f3mm"]
 [ext_resource type="PackedScene" uid="uid://c1rvusfc471bk" path="res://Scenes/Worlds/fishing_game.tscn" id="12_5q2qh"]
 [ext_resource type="Script" uid="uid://cnu8p6ps3oo4t" path="res://Scripts/Worlds/ambient_lighting.gd" id="13_70xb3"]
+[ext_resource type="Texture2D" uid="uid://gmcyyicynr27" path="res://Assets/Hotel03.png" id="13_h26cd"]
 [ext_resource type="PackedScene" uid="uid://dgo133rxhspk8" path="res://Scenes/Buildings/pubexterior.tscn" id="14_pco4b"]
-[ext_resource type="Texture2D" uid="uid://dl3r677pr3amb" path="res://Assets/Characters/sprites npc idle 2-Sheet.png" id="15_3tgnx"]
+[ext_resource type="Texture2D" uid="uid://bqrtwqhxmmso6" path="res://Assets/Characters/sprites npc idle 2-Sheet.png" id="15_3tgnx"]
 [ext_resource type="Script" uid="uid://bwv23tabywmyo" path="res://Scripts/Entities/NPCs/mayor_accusation.gd" id="15_cixay"]
 [ext_resource type="Script" uid="uid://cxb66hifx8uqm" path="res://Scenes/Worlds/Levels/fisherman_day_manager.gd" id="19_2f3mm"]
-[ext_resource type="Texture2D" uid="uid://ckpkp42j5ruef" path="res://Assets/cave entrance.png" id="20_hrc22"]
+[ext_resource type="Texture2D" uid="uid://ceeobgl5fmjb1" path="res://Assets/cave entrance.png" id="20_hrc22"]
 [ext_resource type="Script" uid="uid://dwrqxgmcex7ni" path="res://Scenes/Worlds/cave_entrance.gd" id="21_nt2rk"]
-[ext_resource type="Texture2D" uid="uid://dn5367t706g8q" path="res://Assets/maria_corpse.png" id="22_hi0ut"]
+[ext_resource type="Texture2D" uid="uid://c8wrk5s5yywcs" path="res://Assets/MariaCorpse01.png" id="25_jfgpq"]
+[ext_resource type="Texture2D" uid="uid://ggqcwcelyqb5" path="res://Assets/crimescene.png" id="26_jfgpq"]
+[ext_resource type="Script" uid="uid://crrkiqtu0w12f" path="res://Scripts/Components/interactable.gd" id="27_aun7d"]
+[ext_resource type="Script" uid="uid://cujk0ej2sii3r" path="res://Scripts/Components/zooming.gd" id="27_dhcx4"]
+[ext_resource type="Texture2D" uid="uid://u6pu2dyxquid" path="res://Assets/Zoomable Art/RedPaint_Boot.png" id="29_tvyt0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aboc6"]
 texture = ExtResource("3_pco4b")
@@ -82,7 +87,7 @@ size = Vector2(286.11877, 82.56856)
 size = Vector2(224.24246, 82.56856)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3tgnx"]
-size = Vector2(288.58252, 82.56856)
+size = Vector2(256.05597, 82.56856)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pchsx"]
 atlas = ExtResource("8_rboht")
@@ -579,6 +584,8 @@ load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.cte
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nt2rk"]
 size = Vector2(60, 51)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhcx4"]
+
 [node name="Island" type="Node2D" unique_id=1404676393]
 y_sort_enabled = true
 script = ExtResource("1_uaq31")
@@ -753,12 +760,13 @@ id = 8
 position = Vector2(64.53229, 10.294189)
 
 [node name="HouseSprite" type="Sprite2D" parent="Buildings/IslandHouseEntrance8/House" unique_id=950907726]
-position = Vector2(0, -168.81674)
-texture = ExtResource("11_2f3mm")
+position = Vector2(-64.70587, -183.52295)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_h26cd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/IslandHouseEntrance8/House" unique_id=35819046]
-position = Vector2(0, -35.67798)
-scale = Vector2(0.9999999, 0.9999999)
+position = Vector2(-64.61908, -35.29431)
+scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_3tgnx")
 
 [node name="IslandHouseEntrance9" parent="Buildings" unique_id=1865182176 instance=ExtResource("7_ge070")]
@@ -968,7 +976,7 @@ day_night_gradient = SubResource("Gradient_pco4b")
 position = Vector2(64, 817)
 
 [node name="MayorAccusation" type="Node2D" parent="." unique_id=846354711]
-position = Vector2(-270, 790)
+position = Vector2(-250, 742)
 script = ExtResource("15_cixay")
 
 [node name="Sprite2D" type="Sprite2D" parent="MayorAccusation" unique_id=1148039459]
@@ -1002,8 +1010,46 @@ position = Vector2(-2, 11)
 shape = SubResource("RectangleShape2D_nt2rk")
 
 [node name="MariaCorpse" type="Sprite2D" parent="." unique_id=361233085]
-position = Vector2(-344, 775)
+position = Vector2(-335, 759)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("22_hi0ut")
+texture = ExtResource("25_jfgpq")
+
+[node name="Crimescene" type="Sprite2D" parent="MariaCorpse" unique_id=2116766190]
+show_behind_parent = true
+position = Vector2(-14, 24)
+texture = ExtResource("26_jfgpq")
+
+[node name="KnifeZoom" type="Node2D" parent="." unique_id=442540818]
+position = Vector2(-306, 787)
+script = ExtResource("27_dhcx4")
+zoomable = ExtResource("29_tvyt0")
+
+[node name="Interactable" type="Area2D" parent="KnifeZoom" unique_id=1646219625]
+script = ExtResource("27_aun7d")
+lock_player = true
+metadata/_custom_type_script = "uid://crrkiqtu0w12f"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KnifeZoom/Interactable" unique_id=382443793]
+shape = SubResource("CircleShape2D_dhcx4")
+
+[node name="BG" type="ColorRect" parent="KnifeZoom" unique_id=240133841]
+z_index = 3
+custom_minimum_size = Vector2(22.285, 23.775)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -155.99998
+offset_top = -99.0
+offset_right = 158.00002
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0, 0, 0, 0.6156863)
+
+[node name="Item" type="Sprite2D" parent="KnifeZoom" unique_id=581264519]
+z_index = 3
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("29_tvyt0")
 
 [editable path="Cave/Interactable"]

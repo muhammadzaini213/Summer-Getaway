@@ -2,8 +2,35 @@
 
 [ext_resource type="Script" uid="uid://c5px1qoanta0j" path="res://Scripts/Worlds/fishing_game.gd" id="1_levrw"]
 [ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="2_p3wiu"]
-[ext_resource type="Texture2D" uid="uid://bslvh4u21fmqv" path="res://Assets/Fisherman.png" id="3_levrw"]
+[ext_resource type="Texture2D" uid="uid://drybnfahhmsbt" path="res://Assets/Fisherman03_1.png" id="3_cgo6h"]
 [ext_resource type="Script" uid="uid://cd3222nx3y3k5" path="res://addons/dialogue_manager/nodes/context/dialogue_state_context.gd" id="4_p3wiu"]
+[ext_resource type="Texture2D" uid="uid://bgbkeevynhq4m" path="res://Assets/Fisherman03_2.png" id="4_pr62t"]
+[ext_resource type="Texture2D" uid="uid://e1qfr23uycc" path="res://Assets/Fisherman03_3.png" id="5_61q7h"]
+[ext_resource type="Texture2D" uid="uid://bxmfvfns46iuo" path="res://Assets/Fisherman03_4.png" id="6_yrcmp"]
+[ext_resource type="Texture2D" uid="uid://bincgs14eydtv" path="res://Assets/Fisherman03_5.png" id="7_yn66q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_85j2c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cgo6h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pr62t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_61q7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_yrcmp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yn66q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="Gradient" id="Gradient_levrw"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -26,10 +53,13 @@ interactable = NodePath("Interactable")
 position = Vector2(0, -14)
 lock_player = true
 
-[node name="Fisherman" type="Sprite2D" parent="." unique_id=1127195852]
+[node name="Fisherman" type="AnimatedSprite2D" parent="." unique_id=106130140]
 position = Vector2(0, -16)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_levrw")
+sprite_frames = SubResource("SpriteFrames_85j2c")
+autoplay = "default"
+frame = 3
+frame_progress = 0.64465016
 
 [node name="GameCam" type="Camera2D" parent="." unique_id=1396428497]
 position = Vector2(0, 64)
