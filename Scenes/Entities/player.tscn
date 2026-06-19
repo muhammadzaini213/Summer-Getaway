@@ -25,6 +25,6 @@ animation = &"idle_right"
 autoplay = "idle_down"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=629478706]
-zoom = Vector2(4, 4)
+zoom = Vector2(3.87, 3.87)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
