@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cap3amrc2k4q0"]
+
+[ext_resource type="Script" uid="uid://c2i864ss1s71j" path="res://Scripts/Entities/Items/fishing_hook.gd" id="1_25c7d"]
+[ext_resource type="Texture2D" uid="uid://dqicy2i18o185" path="res://Assets/Characters/fish and bait-Sheet.png" id="2_a6r34"]
+
+[node name="FishingHook" type="Node2D" unique_id=188972588]
+script = ExtResource("1_25c7d")
+
+[node name="Fish" type="Sprite2D" parent="." unique_id=872433752]
+visible = false
+position = Vector2(-4, 12)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_a6r34")
+hframes = 5
+vframes = 3
+frame = 12
+
+[node name="Hook" type="Sprite2D" parent="." unique_id=306106552]
+position = Vector2(0, 4)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_a6r34")
+hframes = 5
+vframes = 3
+frame = 5
+
+[node name="Shadow" type="Sprite2D" parent="Hook" unique_id=1117007949]
+modulate = Color(0, 0, 0, 1)
+show_behind_parent = true
+texture = ExtResource("2_a6r34")
+hframes = 5
+vframes = 3
+frame = 5

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dh7ui5wbwx8s3"]
 
-[ext_resource type="Script" uid="uid://bj7suomqofb2r" path="res://Scenes/Buildings/Scripts/building.gd" id="1_lr2el"]
-[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Entities/Player/player.tscn" id="3_mlp72"]
+[ext_resource type="Script" uid="uid://bj7suomqofb2r" path="res://Scripts/Buildings/building.gd" id="1_lr2el"]
+[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="3_mlp72"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lr2el"]
 

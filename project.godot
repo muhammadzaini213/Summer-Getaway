@@ -10,19 +10,29 @@ config_version=5
 
 [application]
 
-config/name="Summer-Getaway"
-run/main_scene="res://Levels/Island/island.tscn"
+config/name="Summer-Getaway2"
+run/main_scene="res://Scenes/Worlds/Levels/island.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 
 [autoload]
 
-Helpers="*uid://c0twhblsjel4p"
-GameState="*uid://bpfeiksga5w0a"
-DaySystem="*res://Global/DaySystem/day_system.gd"
-AccusationSystem="*res://Global/AccusationSystem/accusation_system.gd"
-GameEvents="*uid://dujfiroijr18g"
-BuildingData="*uid://cn0614at5x8rl"
-FlagRegistry="*uid://cm156pgaikll"
+Helpers="*res://Global/Helpers.gd"
+GameState="*res://Global/GameState.gd"
+DaySystem="*res://Global/day_system.gd"
+AccusationSystem="*res://Global/accusation_system.gd"
+GameEvents="*res://Global/GameEvents.gd"
+BuildingData="*res://Scripts/Buildings/BuildingData.gd"
+FlagRegistry="*res://Global/FlagRegistry.gd"
+DialogueManager="*uid://c3rodes2l3gxb"
+GameResult="*uid://l3vout1btlxi"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [global_group]
 
@@ -72,7 +82,7 @@ inventory={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://untitled.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/npc_dialogues.dialogue", "res://dialogues/bartender.dialogue", "res://dialogues/mayor_accusation.dialogue")
 
 [layer_names]
 

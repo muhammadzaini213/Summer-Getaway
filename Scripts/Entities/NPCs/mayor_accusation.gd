@@ -1,26 +1,32 @@
 extends Node2D
 
-@export var interactable: Interactable
-@export var correct_suspect_id := "suspect_03"
-@export var suspects: Array[Dictionary] = [
-	{"id": "suspect_01", "display_name": "Suspect 1"},
-	{"id": "suspect_02", "display_name": "Suspect 2"},
-	{"id": "suspect_03", "display_name": "Suspect 3"},
-	{"id": "suspect_04", "display_name": "Suspect 4"},
-]
+@onready var interactable: Interactable = $Interactable
+
+var dialogue_resource: DialogueResource = preload("uid://cx54c2ghpijbt")
+var dialogue_id := "Mayor"
 
 
 func _ready() -> void:
+
 	if interactable == null:
 		interactable = $Interactable
 
 	interactable.interact.connect(_on_interact)
-	AccusationSystem.accusation_closed.connect(_on_accusation_closed)
 
 
 func _on_interact() -> void:
-	AccusationSystem.open_accusation(suspects, correct_suspect_id)
+
+	DialogueManager.dialogue_ended.connect(
+		_on_dialogue_finished,
+		CONNECT_ONE_SHOT
+	)
+
+	DialogueManager.show_dialogue_balloon(
+		dialogue_resource,
+		dialogue_id
+	)
 
 
-func _on_accusation_closed() -> void:
+func _on_dialogue_finished(_resource: DialogueResource) -> void:
+
 	interactable.finish_interact.emit()

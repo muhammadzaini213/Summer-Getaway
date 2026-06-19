@@ -75,15 +75,32 @@ func set_day_length(seconds: float) -> void:
 
 
 func _start_day(day: int) -> void:
+
 	time_left = day_length_seconds
 	timer_running = true
 	transition_running = false
+
 	get_tree().paused = false
+
 	_set_players_can_move(true)
+
 	_fade.modulate.a = 0.0
+
 	_fade.visible = false
+
 	_message_box.visible = false
+
 	_update_timer_label()
+
+	# Move player back to spawn every morning
+	var player = get_tree().get_first_node_in_group("player")
+
+	if player:
+
+		player.global_position = Vector2(-5, 407)
+
+		print("[DEBUG] Player reset to spawn")
+
 	day_started.emit(day)
 
 

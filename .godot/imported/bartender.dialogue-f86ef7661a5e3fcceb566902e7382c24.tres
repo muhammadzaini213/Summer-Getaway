@@ -1,0 +1,68 @@
+[gd_resource type="Resource" script_class="DialogueResource" format=3]
+
+[ext_resource type="Script" uid="uid://dbs4435dsf3ry" path="res://addons/dialogue_manager/dialogue_resource.gd" id="1_2uckm"]
+
+[resource]
+script = ExtResource("1_2uckm")
+using_states = PackedStringArray()
+cues = {
+"start": "2"
+}
+character_names = PackedStringArray("Bartender")
+first_cue = "0"
+lines = {
+"0": {
+&"id": "0",
+&"next_id": "2",
+&"type": "cue"
+},
+"1": {
+&"id": "1",
+&"next_id": "2",
+&"type": ""
+},
+"2": {
+&"character": "Bartender",
+&"id": "2",
+&"next_id": "3",
+&"static_id": "",
+&"text": "Come here, lad. My friend is coming to the island tomorrow.",
+&"type": "dialogue"
+},
+"3": {
+&"character": "Bartender",
+&"id": "3",
+&"next_id": "4",
+&"static_id": "",
+&"text": "He fishes for a living.",
+&"type": "dialogue"
+},
+"4": {
+&"character": "Bartender",
+&"id": "4",
+&"next_id": "5",
+&"static_id": "",
+&"text": "Help him out and he'll help you too.",
+&"type": "dialogue"
+},
+"5": {
+&"id": "5",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+},
+"7": {
+&"id": "7",
+&"next_id": "8",
+&"type": ""
+},
+"8": {
+&"id": "8",
+&"is_snippet": false,
+&"next_id": "end",
+&"next_id_after": "",
+&"type": "goto"
+}
+}
+metadata/dialogue_manager_version = "3.10.1"

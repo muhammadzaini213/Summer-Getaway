@@ -19,6 +19,11 @@ var interior_scenes: Dictionary = {
 var loaded_interiors: Dictionary = {
 }
 
+var house_npc_ids: Dictionary = {}
+var murderer_house_id: int = -1
+var murderer_npc_id: String = ""
+var murderer_interior_key: StringName = &"layout_two"
+
 func randomize_interior(type: BuildingTypes) -> PackedScene:
 	var layouts = interior_scenes[type]
 
@@ -42,3 +47,30 @@ func randomize_interior(type: BuildingTypes) -> PackedScene:
 		used_layouts[type].append(chosen_key)
 
 	return layouts[chosen_key]
+
+
+func assign_murderer() -> void:
+	murderer_house_id = -1
+	murderer_npc_id = ""
+
+	var house_ids := loaded_interiors.keys()
+	house_ids.sort()
+
+	for house_id in house_ids:
+		if _is_murderer_interior(loaded_interiors[house_id]):
+			murderer_house_id = int(house_id)
+			murderer_npc_id = String(house_npc_ids.get(house_id, ""))
+			return
+
+
+func is_correct_accusation(accused_npc_id) -> bool:
+	return str(accused_npc_id) == murderer_npc_id
+
+
+func _is_murderer_interior(interior_scene: PackedScene) -> bool:
+	for type in interior_scenes.keys():
+		var layouts = interior_scenes[type]
+		if layouts.has(murderer_interior_key) and layouts[murderer_interior_key] == interior_scene:
+			return true
+
+	return false

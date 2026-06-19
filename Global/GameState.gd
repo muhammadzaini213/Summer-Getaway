@@ -2,6 +2,18 @@ extends Node
 
 
 var flags := {}
+var island_return_position := Vector2.ZERO
+var has_island_return_position := false
+var pub_return_position : Vector2 = Vector2.ZERO
+
+func set_island_return_position(position: Vector2) -> void:
+	island_return_position = position
+	has_island_return_position = true
+
+
+func consume_island_return_position() -> Vector2:
+	has_island_return_position = false
+	return island_return_position
 
 func set_flag(flag_name: String, value: bool = true) -> void:
 	if not FlagRegistry.is_valid_flag(flag_name):

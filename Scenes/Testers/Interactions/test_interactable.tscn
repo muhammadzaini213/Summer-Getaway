@@ -1,9 +1,8 @@
 [gd_scene format=3 uid="uid://cbnxpigh0qnob"]
 
 [ext_resource type="Script" uid="uid://dvh2chd1urac" path="res://Scenes/Testers/Interactions/test_object.gd" id="1_wfp4g"]
-[ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Objects/Interactables/interactable.tscn" id="2_n8ap1"]
-[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Entities/Player/player.tscn" id="3_yt6hh"]
-
+[ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="2_n8ap1"]
+[ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="3_yt6hh"]
 
 [node name="TestInteractable" type="Node2D" unique_id=712949273]
 

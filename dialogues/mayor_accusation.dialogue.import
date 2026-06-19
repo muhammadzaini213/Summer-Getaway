@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=18
+type="Resource"
+uid="uid://cx54c2ghpijbt"
+path="res://.godot/imported/mayor_accusation.dialogue-0e178a35ff363b074a45550fa9f5bf41.tres"
+
+[deps]
+
+source_file="res://dialogues/mayor_accusation.dialogue"
+dest_files=["res://.godot/imported/mayor_accusation.dialogue-0e178a35ff363b074a45550fa9f5bf41.tres"]
+
+[params]
+
+defaults=true

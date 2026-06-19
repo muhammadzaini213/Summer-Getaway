@@ -1,0 +1,34 @@
+~ Mayor
+Mayor: Hello there, detective! Did you catch the killer?
+- I'm still on it.
+	Mayor: Okay, you can continue your work now.
+- Yes.
+	Oh? Who is that scumbag who committed such a thing? Tell me!
+	- NPC 1
+		$> GameEvents.print_garbage()
+		do GameResult.check_accusation("npc1")
+	- NPC 2
+		$> GameEvents.print_garbage()
+		do GameResult.check_accusation("npc2")
+	- NPC 3
+		$> GameEvents.print_garbage()
+		do GameResult.check_accusation("npc3")
+	- NPC 4
+		$> GameEvents.print_garbage()
+		do GameResult.check_accusation("npc4")
+	- NPC 5
+		$> GameEvents.print_garbage()
+		do GameResult.check_accusation("npc5")
+	- NPC 6
+		$> GameEvents.print_garbage()
+		do GameResult.check_accusation("npc6")
+	- NPC 7
+		$> GameEvents.print_garbage()
+		do GameResult.check_accusation("npc7")
+	- NPC 8
+		$> GameEvents.print_garbage()
+		do GameResult.check_accusation("npc8")
+	- NPC 9
+		$> GameEvents.print_garbage()
+		do GameResult.check_accusation("npc1")
+=> END

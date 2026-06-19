@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dahv468a0kgar"]
+
+[ext_resource type="Script" uid="uid://dcw5wxb25pe7a" path="res://Scripts/Entities/Items/fish.gd" id="1_2fj5r"]
+[ext_resource type="Texture2D" uid="uid://dqicy2i18o185" path="res://Assets/Characters/fish and bait-Sheet.png" id="2_2fj5r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2fj5r"]
+atlas = ExtResource("2_2fj5r")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_difiv"]
+atlas = ExtResource("2_2fj5r")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fn5pe"]
+atlas = ExtResource("2_2fj5r")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3qkw"]
+atlas = ExtResource("2_2fj5r")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26w0b"]
+atlas = ExtResource("2_2fj5r")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5i8c5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2fj5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_difiv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fn5pe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3qkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26w0b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fish" type="Node2D" unique_id=512412697 groups=["fish"]]
+script = ExtResource("1_2fj5r")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=904652987]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5i8c5")
+autoplay = "default"
+frame_progress = 0.7717023
+flip_h = true

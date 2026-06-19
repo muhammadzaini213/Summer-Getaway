@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cldqb8ttobof5"]
+
+[ext_resource type="Script" uid="uid://01cvagmqt8op" path="res://Scripts/Buildings/house_exterior_lights.gd" id="1_6v1ps"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_70xb3"]
+blend_mode = 1
+light_mode = 1
+
+[sub_resource type="Gradient" id="Gradient_aboc6"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0.14457831, 1)
+colors = PackedColorArray(0.7417004, 0.46409243, 5.7756904e-07, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cixay"]
+gradient = SubResource("Gradient_aboc6")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.59565216, 1)
+
+[node name="Lights" type="Polygon2D" unique_id=1700159474]
+z_index = 1
+material = SubResource("CanvasItemMaterial_70xb3")
+color = Color(1, 0.73933333, 0.32, 1)
+polygon = PackedVector2Array(-52.54237, -30.508453, -33.898304, -30.508453, -33.898304, -13.559326, -52.54237, -13.559326)
+script = ExtResource("1_6v1ps")
+
+[node name="Bloom" type="Sprite2D" parent="." unique_id=148425280]
+z_index = 1
+material = SubResource("CanvasItemMaterial_70xb3")
+position = Vector2(-43.220337, -22.03392)
+scale = Vector2(0.6620762, 0.6111467)
+texture = SubResource("GradientTexture2D_cixay")
