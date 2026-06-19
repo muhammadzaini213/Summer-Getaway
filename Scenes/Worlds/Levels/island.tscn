@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://bwv23tabywmyo" path="res://Scripts/Entities/NPCs/mayor_accusation.gd" id="15_cixay"]
 [ext_resource type="Script" uid="uid://cxb66hifx8uqm" path="res://Scenes/Worlds/Levels/fisherman_day_manager.gd" id="19_2f3mm"]
 [ext_resource type="Texture2D" uid="uid://ckpkp42j5ruef" path="res://Assets/cave entrance.png" id="20_hrc22"]
+[ext_resource type="Texture2D" uid="uid://dn5367t706g8q" path="res://Assets/maria_corpse.png" id="22_hi0ut"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aboc6"]
 texture = ExtResource("3_pco4b")
@@ -740,7 +741,7 @@ shape = SubResource("RectangleShape2D_3tgnx")
 [node name="IslandHouseEntrance9" parent="Buildings" unique_id=1865182176 instance=ExtResource("7_ge070")]
 position = Vector2(701, 445.00003)
 scale = Vector2(0.665, 0.665)
-id = 7
+id = 9
 
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance9" unique_id=435167833]
 position = Vector2(9.689392, 3.0074463)
@@ -756,7 +757,7 @@ shape = SubResource("RectangleShape2D_8w4ur")
 [node name="IslandHouseEntrance10" parent="Buildings" unique_id=275407865 instance=ExtResource("7_ge070")]
 position = Vector2(512, 416)
 scale = Vector2(0.665, 0.665)
-id = 7
+id = 10
 
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance10" unique_id=950856949]
 position = Vector2(53.2984, 3.0074463)
@@ -972,5 +973,10 @@ position = Vector2(0, 4)
 [node name="CollisionShape2D" parent="Cave/Interactable" index="0" unique_id=986545324]
 position = Vector2(0, -37.5)
 shape = SubResource("RectangleShape2D_nt2rk")
+
+[node name="MariaCorpse" type="Sprite2D" parent="." unique_id=361233085]
+position = Vector2(-344, 775)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("22_hi0ut")
 
 [editable path="Cave/Interactable"]
