@@ -11,6 +11,7 @@ var day_length_seconds := DEFAULT_DAY_LENGTH_SECONDS
 var time_left := DEFAULT_DAY_LENGTH_SECONDS
 var timer_running := true
 var transition_running := false
+var cave_revealed := false
 
 var _timer_label: Label
 var _fade: ColorRect
@@ -26,11 +27,35 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
+
 	if not timer_running or transition_running:
 		return
 
 	time_left = maxf(time_left - delta, 0.0)
+
 	_update_timer_label()
+
+	if not cave_revealed and time_left <= 330.0:
+
+		cave_revealed = true
+
+		var island = get_tree().current_scene
+
+		var cave = island.get_node_or_null("Cave")
+
+		if cave:
+			cave.visible = true
+
+		var cave_path = island.get_node_or_null("CavePath")
+
+		if cave_path:
+			cave_path.visible = true
+
+		var cave_water = island.get_node_or_null("CaveWater")
+
+		if cave_water:
+			cave_water.visible = false
+			cave_water.enabled = false
 
 	if time_left <= 0.0:
 		_end_day()
@@ -76,8 +101,12 @@ func set_day_length(seconds: float) -> void:
 
 func _start_day(day: int) -> void:
 
+	cave_revealed = false
+
 	time_left = day_length_seconds
+
 	timer_running = true
+
 	transition_running = false
 
 	get_tree().paused = false
@@ -92,7 +121,6 @@ func _start_day(day: int) -> void:
 
 	_update_timer_label()
 
-	# Move player back to spawn every morning
 	var player = get_tree().get_first_node_in_group("player")
 
 	if player:
@@ -100,6 +128,24 @@ func _start_day(day: int) -> void:
 		player.global_position = Vector2(-5, 407)
 
 		print("[DEBUG] Player reset to spawn")
+
+	var island = get_tree().current_scene
+
+	var cave = island.get_node_or_null("Cave")
+
+	if cave:
+		cave.visible = false
+
+	var cave_path = island.get_node_or_null("CavePath")
+
+	if cave_path:
+		cave_path.visible = false
+
+	var cave_water = island.get_node_or_null("CaveWater")
+
+	if cave_water:
+		cave_water.visible = true
+		cave_water.enabled = true
 
 	day_started.emit(day)
 
