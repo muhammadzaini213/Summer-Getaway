@@ -968,7 +968,7 @@ script = ExtResource("19_2f3mm")
 fisherman = NodePath("../Fisherman")
 
 [node name="Cave" type="Node2D" parent="." unique_id=1078409456 groups=["cave"]]
-position = Vector2(1200, 1500)
+position = Vector2(632, -133)
 script = ExtResource("21_nt2rk")
 
 [node name="Col" type="StaticBody2D" parent="Cave" unique_id=276473987]
