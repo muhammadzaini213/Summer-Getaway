@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://uvorirjkacxt" path="res://Scenes/Worlds/main_menu.gd" id="1_rwvds"]
 [ext_resource type="Texture2D" uid="uid://c0pqnbq6ylw2p" path="res://Assets/Logo02.png" id="2_brsdq"]
+[ext_resource type="Texture2D" uid="uid://dpr3p8huqg0kr" path="res://Assets/UI/backgroundmenu.webp" id="2_qr768"]
 [ext_resource type="Texture2D" uid="uid://6g4eoaq5v7qw" path="res://Assets/UI/Button_Idle01.png" id="3_sbtu8"]
 [ext_resource type="Texture2D" uid="uid://bsriub8osmqs6" path="res://Assets/UI/Button_Pressed01.png" id="4_qr768"]
 [ext_resource type="Texture2D" uid="uid://c1g2vo65wq6yy" path="res://Assets/UI/Button_Hovered01.png" id="5_igon7"]
@@ -20,20 +21,23 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 3.0
-offset_bottom = 5.0
+offset_left = -96.0
+offset_top = -81.0
+offset_right = 126.0
+offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
+texture = ExtResource("2_qr768")
 
 [node name="Title" type="TextureRect" parent="." unique_id=758282541]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -581.0
-offset_top = 161.0
-offset_right = 92.0
-offset_bottom = 451.0
+offset_left = -643.0
+offset_top = 21.0
+offset_right = 30.0
+offset_bottom = 311.0
 texture = ExtResource("2_brsdq")
 
 [node name="PlayButton" type="TextureButton" parent="." unique_id=312726225]
