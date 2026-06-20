@@ -19,13 +19,21 @@ const MAP_MAX_Y := 20
 
 
 func _ready() -> void:
+
 	add_to_group("terrain")
-	
+
 	if not Engine.is_editor_hint():
+
 		_register_murderer_ids()
-		
+
+	var day_system = get_node("/root/DaySystem")
+
+	day_system.activate_day_system()
+
 	if GameState.pub_return_position != Vector2.ZERO:
+
 		$Player.global_position = GameState.pub_return_position
+
 		GameState.pub_return_position = Vector2.ZERO
 
 
