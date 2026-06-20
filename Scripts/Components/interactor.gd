@@ -27,9 +27,10 @@ func _signal_interactable() -> void:
 
 			interactable.start_interaction()
 
-			await get_tree().create_timer(0.2).timeout
+			var ui = get_node_or_null("/root/InteractionUI")
 
-			get_node("/root/InteractionUI").hide_prompt()
+			if ui:
+				ui.hide_prompt()
 
 			return
 

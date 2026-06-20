@@ -40,11 +40,20 @@ func _ready() -> void:
 func activate_day_system() -> void:
 
 	if get_tree().current_scene.name != "Island":
+
 		return
 
 	visible = true
 
 	timer_running = true
+
+	if GameState.pub_return_position != Vector2.ZERO:
+
+		return
+
+	if GameState.cave_return_position != Vector2.ZERO:
+
+		return
 
 	_start_day(current_day)
 	
