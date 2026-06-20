@@ -24,6 +24,7 @@ func _on_transition_area_body_entered(body: Node2D) -> void:
 
 func _on_interact() -> void:
 	#_enter_building(interactable.user)
+	AudioManager.play_sfx(AudioManager.OPEN_DOOR)
 	GameState.pub_return_position = interactable.user.global_position
 	get_tree().change_scene_to_file(int_scn_pth)
 

@@ -76,5 +76,11 @@ func is_hit() -> void:
 	tweener.play()
 	
 	if health <= 0:
+
+		AudioManager.stop_bgm()
+
+		AudioManager.play_bgm("res://Assets/Audio/mus_win.ogg")
+
 		queue_free()
-		$"../Won".show()
+
+		$"../Lost".show()

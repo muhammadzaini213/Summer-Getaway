@@ -2,7 +2,7 @@ class_name FinalFight
 extends Node2D
 
 func _ready() -> void:
-	pass
+	AudioManager.play_bgm("res://Assets/Audio/mus_intense.ogg")
 
 func _process(delta: float) -> void:
 	pass

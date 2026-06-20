@@ -4,6 +4,7 @@ var player_near_exit := false
 
 
 func _ready() -> void:
+	AudioManager.play_bgm("res://Assets/Audio/mus_caveAmbience.mp3")
 	$ExitRocks/Area2D.body_entered.connect(_on_enter)
 	$ExitRocks/Area2D.body_exited.connect(_on_exit)
 

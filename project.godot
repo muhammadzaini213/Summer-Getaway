@@ -26,6 +26,7 @@ FlagRegistry="*res://Global/FlagRegistry.gd"
 DialogueManager="*uid://c3rodes2l3gxb"
 GameResult="*uid://l3vout1btlxi"
 InteractionUI="*uid://dwenkxrwrrfc"
+AudioManager="*uid://kch3rglfxpv4"
 
 [display]
 

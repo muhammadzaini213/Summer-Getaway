@@ -19,7 +19,8 @@ const MAP_MAX_Y := 20
 
 
 func _ready() -> void:
-
+	
+	AudioManager.play_bgm("res://Assets/Audio/mus_gameplay.ogg")
 	add_to_group("terrain")
 
 	if not Engine.is_editor_hint():

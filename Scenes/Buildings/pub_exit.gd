@@ -25,6 +25,8 @@ func _process(_delta):
 	if player_near and Input.is_action_just_pressed("interact"):
 
 		print("[DEBUG] Leaving Pub")
+		
+		AudioManager.play_sfx(AudioManager.CLOSE_DOOR)
 
 		get_tree().change_scene_to_file(
 			"res://Scenes/Worlds/Levels/island.tscn"

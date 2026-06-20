@@ -28,6 +28,8 @@ var _dialogue_state := {
 }
 
 func _ready() -> void:
+	
+	AudioManager.play_bgm("res://Assets/Audio/mus_fishFinal.ogg")
 	if interactable == null:
 		interactable = get_node_or_null("Interactable")
 
