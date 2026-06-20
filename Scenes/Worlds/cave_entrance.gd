@@ -8,10 +8,10 @@ func _ready() -> void:
 	interactable.interact.connect(_on_interact)
 
 
-func _on_interact() -> void:
-	GameState.pub_return_position = interactable.user.global_position
+func _on_interact():
+
+	GameState.cave_return_position = interactable.user.global_position
+	GameState.cave_discovered = true
 	get_tree().change_scene_to_file(
 		"res://Scenes/Worlds/cave.tscn"
 	)
-
-	interactable.finish_interact.emit()

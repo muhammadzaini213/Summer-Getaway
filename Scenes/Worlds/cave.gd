@@ -28,3 +28,7 @@ func _on_enter(body) -> void:
 func _on_exit(body) -> void:
 	if body.is_in_group("player"):
 		player_near_exit = false
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

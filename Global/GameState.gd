@@ -5,6 +5,8 @@ var flags := {}
 var island_return_position := Vector2.ZERO
 var has_island_return_position := false
 var pub_return_position : Vector2 = Vector2.ZERO
+var cave_return_position := Vector2.ZERO
+var cave_discovered := false
 
 func set_island_return_position(position: Vector2) -> void:
 	island_return_position = position

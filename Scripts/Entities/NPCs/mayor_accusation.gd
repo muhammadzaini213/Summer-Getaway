@@ -8,7 +8,14 @@ var dialogue_id := "Mayor"
 
 func _ready() -> void:
 
+	var anim = get_node_or_null("AnimatedSprite2D")
+
+	if anim:
+
+		anim.play("default")
+
 	if interactable == null:
+
 		interactable = $Interactable
 
 	interactable.interact.connect(_on_interact)

@@ -19,14 +19,48 @@ const MAP_MAX_Y := 20
 
 
 func _ready() -> void:
+
 	add_to_group("terrain")
-	
+
 	if not Engine.is_editor_hint():
+
 		_register_murderer_ids()
-		
+
+	var day_system = get_node("/root/DaySystem")
+
+	day_system.activate_day_system()
+	
+	if GameState.cave_discovered:
+
+		var cave = get_node_or_null("Cave")
+
+		if cave:
+
+			cave.visible = true
+
+		var cave_path = get_node_or_null("CavePath")
+
+		if cave_path:
+
+			cave_path.visible = true
+
+		var cave_water = get_node_or_null("CaveWater")
+
+		if cave_water:
+
+			cave_water.visible = false
+
+			cave_water.enabled = false
 	if GameState.pub_return_position != Vector2.ZERO:
+
 		$Player.global_position = GameState.pub_return_position
+
 		GameState.pub_return_position = Vector2.ZERO
+	if GameState.cave_return_position != Vector2.ZERO:
+
+		$Player.global_position = GameState.cave_return_position
+
+		GameState.cave_return_position = Vector2.ZERO
 
 
 func _register_murderer_ids() -> void:

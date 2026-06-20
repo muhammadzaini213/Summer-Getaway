@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://cd20bqb84q7v1"]
 
 [ext_resource type="Script" uid="uid://d2m1n770k61lt" path="res://Scenes/Worlds/cave.gd" id="1_oo41j"]
+[ext_resource type="Script" uid="uid://byusx71pswssa" path="res://Scenes/Worlds/cave_exit.gd" id="2_sifxj"]
 [ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="3_od6co"]
-[ext_resource type="Texture2D" uid="uid://bt8c31ldwx1w7" path="res://Assets/cave floor.png" id="4_b5dil"]
-[ext_resource type="Texture2D" uid="uid://bnl7njn2cqr4i" path="res://Assets/cave wall back with entrance.png" id="5_od6co"]
-[ext_resource type="Texture2D" uid="uid://dlnon06swc61r" path="res://Assets/cave wall front.png" id="6_mt2ob"]
-[ext_resource type="Texture2D" uid="uid://c2t7f24lmh231" path="res://Assets/cave wall side.png" id="6_sifxj"]
+[ext_resource type="Texture2D" uid="uid://ydkqeyxlhkel" path="res://Assets/cave floor.png" id="4_b5dil"]
+[ext_resource type="Texture2D" uid="uid://cielu8s6uiqoc" path="res://Assets/cave wall back with entrance.png" id="5_od6co"]
+[ext_resource type="Texture2D" uid="uid://bahddwuduybtj" path="res://Assets/cave wall front.png" id="6_mt2ob"]
+[ext_resource type="Texture2D" uid="uid://boo6ohdy8p4mi" path="res://Assets/cave wall side.png" id="6_sifxj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mt2ob"]
 size = Vector2(119.06976, 130.1695)
@@ -40,6 +41,7 @@ position = Vector2(-8, 92.999985)
 scale = Vector2(0.16796875, 0.23046876)
 
 [node name="Area2D" type="Area2D" parent="ExitRocks" unique_id=1008604850]
+script = ExtResource("2_sifxj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitRocks/Area2D" unique_id=1353951946]
 position = Vector2(-1.4884033, -1.0847473)
@@ -106,3 +108,5 @@ z_index = -3
 position = Vector2(-6.49999, -92.99999)
 scale = Vector2(0.345, 0.345)
 texture = ExtResource("6_mt2ob")
+
+[connection signal="body_entered" from="ExitRocks/Area2D" to="." method="_on_area_2d_body_entered"]

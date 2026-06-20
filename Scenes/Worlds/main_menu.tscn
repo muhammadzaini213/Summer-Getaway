@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://do8nfjmx7pw2m"]
+
+[ext_resource type="Script" uid="uid://uvorirjkacxt" path="res://Scenes/Worlds/main_menu.gd" id="1_rwvds"]
+[ext_resource type="Texture2D" uid="uid://c0pqnbq6ylw2p" path="res://Assets/Logo02.png" id="2_brsdq"]
+[ext_resource type="Texture2D" uid="uid://dpr3p8huqg0kr" path="res://Assets/UI/backgroundmenu.webp" id="2_qr768"]
+[ext_resource type="Texture2D" uid="uid://6g4eoaq5v7qw" path="res://Assets/UI/Button_Idle01.png" id="3_sbtu8"]
+[ext_resource type="Texture2D" uid="uid://bsriub8osmqs6" path="res://Assets/UI/Button_Pressed01.png" id="4_qr768"]
+[ext_resource type="Texture2D" uid="uid://c1g2vo65wq6yy" path="res://Assets/UI/Button_Hovered01.png" id="5_igon7"]
+
+[node name="Control" type="Control" unique_id=1588311265]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rwvds")
+
+[node name="Background" type="TextureRect" parent="." unique_id=198296976]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -81.0
+offset_right = 126.0
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_qr768")
+
+[node name="Title" type="TextureRect" parent="." unique_id=758282541]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -643.0
+offset_top = 21.0
+offset_right = 30.0
+offset_bottom = 311.0
+texture = ExtResource("2_brsdq")
+
+[node name="PlayButton" type="TextureButton" parent="." unique_id=312726225]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 37.0
+offset_right = 1019.0
+offset_bottom = 165.0
+texture_normal = ExtResource("3_sbtu8")
+texture_pressed = ExtResource("4_qr768")
+texture_hover = ExtResource("5_igon7")
+
+[node name="Label" type="Label" parent="PlayButton" unique_id=1638555627]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 7.0
+offset_right = 312.0
+offset_bottom = 144.0
+theme_override_font_sizes/font_size = 80
+text = "PLAY"
+
+[node name="CreditsButton" type="TextureButton" parent="." unique_id=637492154]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 249.0
+offset_right = 1019.0
+offset_bottom = 377.0
+texture_normal = ExtResource("3_sbtu8")
+texture_pressed = ExtResource("4_qr768")
+texture_hover = ExtResource("5_igon7")
+
+[node name="Label" type="Label" parent="CreditsButton" unique_id=771226252]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1.0
+offset_right = 335.0
+offset_bottom = 111.0
+theme_override_font_sizes/font_size = 75
+text = "CREDITS"
+
+[node name="QuitButton" type="TextureButton" parent="." unique_id=813247128]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 459.0
+offset_right = 1019.0
+offset_bottom = 587.0
+texture_normal = ExtResource("3_sbtu8")
+texture_pressed = ExtResource("4_qr768")
+texture_hover = ExtResource("5_igon7")
+
+[node name="Label" type="Label" parent="QuitButton" unique_id=2005994369]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 5.0
+offset_right = 263.0
+offset_bottom = 115.0
+theme_override_font_sizes/font_size = 80
+text = "QUIT"
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

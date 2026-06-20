@@ -6,6 +6,8 @@ signal day_ended(day: int)
 const DEFAULT_DAY_LENGTH_SECONDS := 390.0
 const END_MESSAGE := "It's getting late, detective. Let's continue tomorrow."
 
+var ui_built := false
+var active_on_island := false
 var current_day := 1
 var day_length_seconds := DEFAULT_DAY_LENGTH_SECONDS
 var time_left := DEFAULT_DAY_LENGTH_SECONDS
@@ -20,11 +22,41 @@ var _message_label: Label
 
 
 func _ready() -> void:
-	layer = 100
-	process_mode = Node.PROCESS_MODE_ALWAYS
-	_build_ui()
-	_start_day(current_day)
 
+	layer = 100
+
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+	if not ui_built:
+
+		ui_built = true
+
+		_build_ui()
+
+	visible = false
+
+	timer_running = false
+
+func activate_day_system() -> void:
+
+	if get_tree().current_scene.name != "Island":
+
+		return
+
+	visible = true
+
+	timer_running = true
+
+	if GameState.pub_return_position != Vector2.ZERO:
+
+		return
+
+	if GameState.cave_return_position != Vector2.ZERO:
+
+		return
+
+	_start_day(current_day)
+	
 
 func _process(delta: float) -> void:
 
@@ -125,9 +157,17 @@ func _start_day(day: int) -> void:
 
 	if player:
 
-		player.global_position = Vector2(-5, 407)
+		if GameState.pub_return_position != Vector2.ZERO:
 
-		print("[DEBUG] Player reset to spawn")
+			player.global_position = GameState.pub_return_position
+
+			GameState.pub_return_position = Vector2.ZERO
+
+		else:
+
+			player.global_position = Vector2(-5, 407)
+
+			print("[DEBUG] Player position restored")
 
 	var island = get_tree().current_scene
 
