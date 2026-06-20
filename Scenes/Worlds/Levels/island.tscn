@@ -26,9 +26,8 @@
 [ext_resource type="Script" uid="uid://dwrqxgmcex7ni" path="res://Scenes/Worlds/cave_entrance.gd" id="21_nt2rk"]
 [ext_resource type="Texture2D" uid="uid://c8wrk5s5yywcs" path="res://Assets/MariaCorpse01.png" id="25_jfgpq"]
 [ext_resource type="Texture2D" uid="uid://ggqcwcelyqb5" path="res://Assets/crimescene.png" id="26_jfgpq"]
-[ext_resource type="Script" uid="uid://crrkiqtu0w12f" path="res://Scripts/Components/interactable.gd" id="27_aun7d"]
-[ext_resource type="Script" uid="uid://cujk0ej2sii3r" path="res://Scripts/Components/zooming.gd" id="27_dhcx4"]
-[ext_resource type="Texture2D" uid="uid://u6pu2dyxquid" path="res://Assets/Zoomable Art/RedPaint_Boot.png" id="29_tvyt0"]
+[ext_resource type="PackedScene" uid="uid://p5p8s4anxvhx" path="res://Scenes/Components/zoom.tscn" id="27_dhcx4"]
+[ext_resource type="Texture2D" uid="uid://ugdk0m4r234y" path="res://Assets/Maria_Corpse.png" id="28_tvyt0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aboc6"]
 texture = ExtResource("3_pco4b")
@@ -584,8 +583,6 @@ load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.cte
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nt2rk"]
 size = Vector2(60, 51)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dhcx4"]
-
 [node name="Island" type="Node2D" unique_id=1404676393]
 y_sort_enabled = true
 script = ExtResource("1_uaq31")
@@ -650,6 +647,7 @@ position = Vector2(-584, 267)
 scale = Vector2(0.41, 0.41)
 random_interior = false
 id = 2
+int_scn_pth = "res://Scenes/Buildings/Cabin/Interiors/house_2.tscn"
 
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance2" unique_id=697020968]
 position = Vector2(31.707275, 0)
@@ -663,13 +661,14 @@ position = Vector2(0, -35.67798)
 shape = SubResource("RectangleShape2D_8w4ur")
 
 [node name="IslandHouseEntrance3" parent="Buildings" unique_id=464653579 instance=ExtResource("7_ge070")]
-position = Vector2(-720, 95)
+position = Vector2(-714, 95)
 scale = Vector2(0.405, 0.405)
 random_interior = false
 id = 3
+int_scn_pth = "res://Scenes/Buildings/Cabin/Interiors/house_3.tscn"
 
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance3" unique_id=1723489408]
-position = Vector2(29.23816, 0)
+position = Vector2(14.42334, 0)
 
 [node name="HouseSprite" type="Sprite2D" parent="Buildings/IslandHouseEntrance3/House" unique_id=638762301]
 position = Vector2(0, -95.28732)
@@ -824,7 +823,7 @@ frame_progress = 0.5634459
 lock_player = true
 
 [node name="npc2" type="Node2D" parent="Characters" unique_id=46176577 node_paths=PackedStringArray("interactable")]
-position = Vector2(-703, 88)
+position = Vector2(-676, 88)
 scale = Vector2(0.52, 0.52)
 script = ExtResource("9_dialogue")
 dialogue_id = "npc2"
@@ -1019,37 +1018,8 @@ show_behind_parent = true
 position = Vector2(-14, 24)
 texture = ExtResource("26_jfgpq")
 
-[node name="KnifeZoom" type="Node2D" parent="." unique_id=442540818]
-position = Vector2(-306, 787)
-script = ExtResource("27_dhcx4")
-zoomable = ExtResource("29_tvyt0")
-
-[node name="Interactable" type="Area2D" parent="KnifeZoom" unique_id=1646219625]
-script = ExtResource("27_aun7d")
-lock_player = true
-metadata/_custom_type_script = "uid://crrkiqtu0w12f"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KnifeZoom/Interactable" unique_id=382443793]
-shape = SubResource("CircleShape2D_dhcx4")
-
-[node name="BG" type="ColorRect" parent="KnifeZoom" unique_id=240133841]
-z_index = 3
-custom_minimum_size = Vector2(22.285, 23.775)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -155.99998
-offset_top = -99.0
-offset_right = 158.00002
-offset_bottom = 91.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-color = Color(0, 0, 0, 0.6156863)
-
-[node name="Item" type="Sprite2D" parent="KnifeZoom" unique_id=581264519]
-z_index = 3
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("29_tvyt0")
+[node name="Zoom" parent="." unique_id=661807070 instance=ExtResource("27_dhcx4")]
+position = Vector2(-335, 759)
+zoomable = ExtResource("28_tvyt0")
 
 [editable path="Cave/Interactable"]
