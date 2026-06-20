@@ -1060,7 +1060,7 @@ show_behind_parent = true
 position = Vector2(-14, 24)
 texture = ExtResource("26_jfgpq")
 
-[node name="Zoom" parent="." unique_id=661807070 instance=ExtResource("27_dhcx4")]
+[node name="ZoomMariaCorpse" parent="." unique_id=661807070 instance=ExtResource("27_dhcx4")]
 position = Vector2(-335, 759)
 zoomable = ExtResource("28_tvyt0")
 
