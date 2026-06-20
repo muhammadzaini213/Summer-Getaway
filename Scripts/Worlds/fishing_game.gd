@@ -75,7 +75,7 @@ func _process(delta: float) -> void:
 				_spawn_fish()
 			
 			# Proceed to GAMEAIM state
-			if Input.is_action_just_pressed("interact"):
+			if Input.is_action_just_pressed("shoot"):
 				var tweener := get_tree().create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO).set_parallel(true)
 				tweener.tween_property(_fishing_power, "modulate", Color(1, 1, 1, 1), 0.25)
 				_scratchpad.time_elapsed = 0.0
@@ -91,7 +91,7 @@ func _process(delta: float) -> void:
 			_scratchpad.time_elapsed += delta
 			
 			# Throw hook
-			if Input.is_action_just_pressed("interact"):
+			if Input.is_action_just_pressed("shoot"):
 				_scratchpad.time_elapsed = 0.0
 				_scratchpad.hook_inst = _fishing_hook_scene.instantiate()
 				get_tree().current_scene.add_child(_scratchpad.hook_inst)

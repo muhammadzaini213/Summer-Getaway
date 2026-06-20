@@ -20,7 +20,7 @@ func _on_day_started(day: int) -> void:
 	if fisherman == null:
 		return
 
-	var unlocked := day >= 0
+	var unlocked := day >= 2
 
 	fisherman.visible = unlocked
 

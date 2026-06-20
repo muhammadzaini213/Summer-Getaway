@@ -24,6 +24,7 @@
 [ext_resource type="Script" uid="uid://cxb66hifx8uqm" path="res://Scenes/Worlds/Levels/fisherman_day_manager.gd" id="19_2f3mm"]
 [ext_resource type="Texture2D" uid="uid://ceeobgl5fmjb1" path="res://Assets/cave entrance.png" id="20_hrc22"]
 [ext_resource type="Script" uid="uid://dwrqxgmcex7ni" path="res://Scenes/Worlds/cave_entrance.gd" id="21_nt2rk"]
+[ext_resource type="Texture2D" uid="uid://eufh03u0qty" path="res://Assets/Characters/mayor_idle-Sheet.png" id="22_tvyt0"]
 [ext_resource type="Texture2D" uid="uid://c8wrk5s5yywcs" path="res://Assets/MariaCorpse01.png" id="25_jfgpq"]
 [ext_resource type="Texture2D" uid="uid://ggqcwcelyqb5" path="res://Assets/crimescene.png" id="26_jfgpq"]
 [ext_resource type="PackedScene" uid="uid://p5p8s4anxvhx" path="res://Scenes/Components/zoom.tscn" id="27_dhcx4"]
@@ -577,8 +578,48 @@ animations = [{
 offsets = PackedFloat32Array(0, 0.60106385, 0.71276593, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.6901961, 0.40784314, 0.25490198, 1, 0.09019608, 0.18431373, 0.30980393, 1, 0.09019608, 0.18431373, 0.30980393, 1)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lm2co"]
-load_path = "res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+[sub_resource type="AtlasTexture" id="AtlasTexture_nudvt"]
+atlas = ExtResource("22_tvyt0")
+region = Rect2(0, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfw4o"]
+atlas = ExtResource("22_tvyt0")
+region = Rect2(32, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmyfo"]
+atlas = ExtResource("22_tvyt0")
+region = Rect2(64, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsr7a"]
+atlas = ExtResource("22_tvyt0")
+region = Rect2(96, 0, 32, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ek16k"]
+atlas = ExtResource("22_tvyt0")
+region = Rect2(128, 0, 32, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8h54p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nudvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfw4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmyfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dsr7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ek16k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nt2rk"]
 size = Vector2(60, 51)
@@ -978,9 +1019,10 @@ position = Vector2(64, 817)
 position = Vector2(-250, 742)
 script = ExtResource("15_cixay")
 
-[node name="Sprite2D" type="Sprite2D" parent="MayorAccusation" unique_id=1148039459]
-scale = Vector2(0.2, 0.2)
-texture = SubResource("CompressedTexture2D_lm2co")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="MayorAccusation" unique_id=1326111500]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_8h54p")
+autoplay = "default"
 
 [node name="Interactable" parent="MayorAccusation" unique_id=1851114976 instance=ExtResource("10_interactable")]
 
