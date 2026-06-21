@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://b6b11xsdhbycj"]
 
 [ext_resource type="Script" uid="uid://c480vnyfxbx1p" path="res://Scripts/Buildings/interior.gd" id="1_g5nhi"]
-[ext_resource type="Texture2D" uid="uid://dsw5bc5dqslnr" path="res://Assets/houseinsidetiles.png" id="2_bdfr1"]
+[ext_resource type="Texture2D" uid="uid://bdt825kcwwdd1" path="res://Assets/houseinsidetiles.png" id="2_bdfr1"]
 [ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="3_6ndqs"]
 [ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="4_45iha"]
 
