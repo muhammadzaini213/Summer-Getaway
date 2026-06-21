@@ -5,33 +5,24 @@
 [ext_resource type="Texture2D" uid="uid://crjjec4i31nco" path="res://20260606_104115.webp" id="2_r5tus"]
 [ext_resource type="Texture2D" uid="uid://dtcuhn1mpp1y1" path="res://Assets/decorations.png" id="3_pco4b"]
 [ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="3_r5tus"]
-[ext_resource type="PackedScene" uid="uid://3vwmhg4g4ua6" path="res://Scenes/Buildings/Cabin/Interiors/house_1.tscn" id="7_4h4wm"]
 [ext_resource type="Texture2D" uid="uid://cv3bo0ovtq3nr" path="res://Assets/Finished Houses/largeredhouse.png" id="7_aboc6"]
 [ext_resource type="PackedScene" uid="uid://6l2lhr3nm35v" path="res://Scenes/Buildings/island_house_entrance.tscn" id="7_ge070"]
 [ext_resource type="Texture2D" uid="uid://byiunf0r6xqka" path="res://Assets/Finished Houses/bluehouse.png" id="8_cixay"]
 [ext_resource type="Texture2D" uid="uid://bept6x72ivl7q" path="res://sprite npcs idle-Sheet 1.png" id="8_rboht"]
 [ext_resource type="Script" uid="uid://t7eeub3th3c6" path="res://Scripts/Entities/NPCs/dialogue_npc.gd" id="9_dialogue"]
 [ext_resource type="Texture2D" uid="uid://cqkqcam3wgu75" path="res://Assets/Finished Houses/smallredhouse.png" id="9_lm2co"]
-[ext_resource type="PackedScene" uid="uid://bxctse2qera75" path="res://Scenes/Buildings/Cabin/Interiors/house_2.tscn" id="9_xlwtd"]
 [ext_resource type="Texture2D" uid="uid://dp5jwsmv0b5tc" path="res://Assets/Finished Houses/smallgreenhouse.png" id="10_2f3mm"]
 [ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="10_interactable"]
 [ext_resource type="Texture2D" uid="uid://cuwhsdj63yoje" path="res://Assets/Finished Houses/largegreenhouse.png" id="11_2f3mm"]
-[ext_resource type="PackedScene" uid="uid://dvrqk5ogfyjp3" path="res://Scenes/Buildings/Cabin/Interiors/house_3.tscn" id="11_fhyuu"]
 [ext_resource type="PackedScene" uid="uid://c1rvusfc471bk" path="res://Scenes/Worlds/fishing_game.tscn" id="12_5q2qh"]
 [ext_resource type="Script" uid="uid://cnu8p6ps3oo4t" path="res://Scripts/Worlds/ambient_lighting.gd" id="13_70xb3"]
-[ext_resource type="PackedScene" uid="uid://dsqr8335mflb2" path="res://Scenes/Buildings/Cabin/Interiors/house_4.tscn" id="13_cbq8h"]
 [ext_resource type="Texture2D" uid="uid://gmcyyicynr27" path="res://Assets/Hotel03.png" id="13_h26cd"]
 [ext_resource type="PackedScene" uid="uid://dgo133rxhspk8" path="res://Scenes/Buildings/pubexterior.tscn" id="14_pco4b"]
 [ext_resource type="Texture2D" uid="uid://bqrtwqhxmmso6" path="res://Assets/Characters/sprites npc idle 2-Sheet.png" id="15_3tgnx"]
 [ext_resource type="Script" uid="uid://bwv23tabywmyo" path="res://Scripts/Entities/NPCs/mayor_accusation.gd" id="15_cixay"]
-[ext_resource type="PackedScene" uid="uid://debe5x3fe1qms" path="res://Scenes/Buildings/Cabin/Interiors/house_5.tscn" id="15_qv0tk"]
-[ext_resource type="PackedScene" uid="uid://2wp28msqky02" path="res://Scenes/Buildings/Cabin/Interiors/house_6.tscn" id="17_e6rpw"]
-[ext_resource type="PackedScene" uid="uid://ijm5bd04epo2" path="res://Scenes/Buildings/Cabin/Interiors/house_7.tscn" id="18_16ry3"]
 [ext_resource type="Script" uid="uid://cxb66hifx8uqm" path="res://Scenes/Worlds/Levels/fisherman_day_manager.gd" id="19_2f3mm"]
-[ext_resource type="PackedScene" uid="uid://bmanm0rfhsjaw" path="res://Scenes/Buildings/Cabin/Interiors/house_8.tscn" id="19_sr3s1"]
 [ext_resource type="Texture2D" uid="uid://ceeobgl5fmjb1" path="res://Assets/cave entrance.png" id="20_hrc22"]
 [ext_resource type="Script" uid="uid://dwrqxgmcex7ni" path="res://Scenes/Worlds/cave_entrance.gd" id="21_nt2rk"]
-[ext_resource type="PackedScene" uid="uid://b6b11xsdhbycj" path="res://Scenes/Buildings/Cabin/Interiors/house_9.tscn" id="21_prvvp"]
 [ext_resource type="Texture2D" uid="uid://eufh03u0qty" path="res://Assets/Characters/mayor_idle-Sheet.png" id="22_kfwrd"]
 [ext_resource type="Texture2D" uid="uid://c8wrk5s5yywcs" path="res://Assets/MariaCorpse01.png" id="25_jfgpq"]
 [ext_resource type="Script" uid="uid://crrkiqtu0w12f" path="res://Scripts/Components/interactable.gd" id="27_aun7d"]
@@ -94,8 +85,8 @@ size = Vector2(286.11877, 82.56856)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2f3mm"]
 size = Vector2(224.24246, 82.56856)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3tgnx"]
-size = Vector2(256.05597, 82.56856)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dhcx4"]
+size = Vector2(526.4706, 137.052)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pchsx"]
 atlas = ExtResource("8_rboht")
@@ -663,7 +654,7 @@ tile_map_data = PackedByteArray("AADe//3/AwAAAAAAAADE/+T/AwAAAAAAAABPAGAAAwAAAAA
 tile_set = SubResource("TileSet_wn8hh")
 
 [node name="Player" parent="." unique_id=317201490 instance=ExtResource("3_r5tus")]
-position = Vector2(5, 407)
+position = Vector2(-634, 753)
 
 [node name="the map refrence" type="Sprite2D" parent="." unique_id=1447809263]
 visible = false
@@ -694,10 +685,6 @@ position = Vector2(-584, 267)
 scale = Vector2(0.41, 0.41)
 id = 2
 
-int_scn_pth = "res://Scenes/Buildings/Cabin/Interiors/house_2.tscn"
-
-
-
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance2" unique_id=697020968]
 position = Vector2(31.707275, 0)
 
@@ -713,10 +700,6 @@ shape = SubResource("RectangleShape2D_8w4ur")
 position = Vector2(-720, 95)
 scale = Vector2(0.405, 0.405)
 id = 3
-
-int_scn_pth = "res://Scenes/Buildings/Cabin/Interiors/house_3.tscn"
-
-
 
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance3" unique_id=1723489408]
 position = Vector2(29.23816, 0)
@@ -735,10 +718,6 @@ position = Vector2(-400, -41)
 scale = Vector2(0.485, 0.485)
 id = 4
 
-int_scn_pth = "res://Scenes/Buildings/Cabin/Interiors/house_4.tscn"
-
-
-
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance4" unique_id=1694145003]
 position = Vector2(29.23816, 0)
 
@@ -754,10 +733,6 @@ shape = SubResource("RectangleShape2D_8w4ur")
 position = Vector2(-654, -167)
 scale = Vector2(0.615, 0.615)
 id = 5
-
-int_scn_pth = "res://Scenes/Buildings/Cabin/Interiors/house_5.tscn"
-
-
 
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance5" unique_id=1003146842]
 position = Vector2(58.50647, 0)
@@ -776,10 +751,6 @@ position = Vector2(354, -2)
 scale = Vector2(0.495, 0.495)
 id = 6
 
-int_scn_pth = "res://Scenes/Buildings/Cabin/Interiors/house_6.tscn"
-
-
-
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance6" unique_id=946845509]
 position = Vector2(65.60181, -6.060605)
 
@@ -797,10 +768,6 @@ position = Vector2(464, 858)
 scale = Vector2(0.665, 0.665)
 id = 7
 
-int_scn_pth = "res://Scenes/Buildings/Cabin/Interiors/house_7.tscn"
-
-
-
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance7" unique_id=2024034905]
 position = Vector2(9.689392, 3.0074463)
 
@@ -812,49 +779,21 @@ texture = ExtResource("9_lm2co")
 position = Vector2(0, -35.67798)
 shape = SubResource("RectangleShape2D_8w4ur")
 
-[node name="IslandHouseEntrance8" parent="Buildings" unique_id=1375286843 instance=ExtResource("7_ge070")]
-position = Vector2(-616, 719)
-scale = Vector2(0.68, 0.68)
-id = 8
-
-
-[node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance8" unique_id=755565093]
-position = Vector2(64.53229, 10.294189)
-
-[node name="HouseSprite" type="Sprite2D" parent="Buildings/IslandHouseEntrance8/House" unique_id=950907726]
-position = Vector2(-64.70587, -183.52295)
-scale = Vector2(0.5, 0.5)
+[node name="Hotel" type="Sprite2D" parent="Buildings" unique_id=950907726]
+position = Vector2(-616.11804, 601.2045)
+scale = Vector2(0.33999997, 0.33999997)
 texture = ExtResource("13_h26cd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/IslandHouseEntrance8/House" unique_id=35819046]
-position = Vector2(-64.61908, -35.29431)
-scale = Vector2(0.9999998, 0.9999998)
-shape = SubResource("RectangleShape2D_3tgnx")
+[node name="StaticBody2D" type="StaticBody2D" parent="Buildings/Hotel" unique_id=69000833]
 
-[node name="IslandHouseEntrance9" parent="Buildings" unique_id=1865182176 instance=ExtResource("7_ge070")]
-position = Vector2(701, 445.00003)
-scale = Vector2(0.665, 0.665)
-id = 9
-
-int_scn_pth = "res://Scenes/Buildings/Cabin/Interiors/house_8.tscn"
-
-
-[node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance9" unique_id=435167833]
-position = Vector2(9.689392, 3.0074463)
-
-[node name="HouseSprite" type="Sprite2D" parent="Buildings/IslandHouseEntrance9/House" unique_id=1888246743]
-position = Vector2(0, -95.28732)
-texture = ExtResource("9_lm2co")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/IslandHouseEntrance9/House" unique_id=1723689655]
-position = Vector2(0, -35.67798)
-shape = SubResource("RectangleShape2D_8w4ur")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/Hotel/StaticBody2D" unique_id=955030787]
+position = Vector2(-1.123169, 307.34277)
+shape = SubResource("RectangleShape2D_dhcx4")
 
 [node name="IslandHouseEntrance10" parent="Buildings" unique_id=275407865 instance=ExtResource("7_ge070")]
 position = Vector2(512, 416)
 scale = Vector2(0.665, 0.665)
-random_interior = false
-id = 10
+id = 8
 
 [node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance10" unique_id=950856949]
 position = Vector2(53.2984, 3.0074463)
@@ -864,6 +803,22 @@ position = Vector2(0, -95.28732)
 texture = ExtResource("10_2f3mm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/IslandHouseEntrance10/House" unique_id=297011271]
+position = Vector2(0, -35.67798)
+shape = SubResource("RectangleShape2D_8w4ur")
+
+[node name="IslandHouseEntrance9" parent="Buildings" unique_id=1865182176 instance=ExtResource("7_ge070")]
+position = Vector2(701, 445.00003)
+scale = Vector2(0.665, 0.665)
+id = 9
+
+[node name="House" type="StaticBody2D" parent="Buildings/IslandHouseEntrance9" unique_id=435167833]
+position = Vector2(9.689392, 3.0074463)
+
+[node name="HouseSprite" type="Sprite2D" parent="Buildings/IslandHouseEntrance9/House" unique_id=1888246743]
+position = Vector2(0, -95.28732)
+texture = ExtResource("9_lm2co")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buildings/IslandHouseEntrance9/House" unique_id=1723689655]
 position = Vector2(0, -35.67798)
 shape = SubResource("RectangleShape2D_8w4ur")
 

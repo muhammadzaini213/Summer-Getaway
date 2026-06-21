@@ -17,9 +17,11 @@ const MAP_MAX_X := 44
 const MAP_MIN_Y := -20
 const MAP_MAX_Y := 20
 
+var intro_dialogue = preload("res://dialogues/intro.dialogue")
 
 func _ready() -> void:
 	
+	call_deferred("try_intro")
 	AudioManager.play_bgm("res://Assets/Audio/mus_gameplay.ogg")
 	add_to_group("terrain")
 
@@ -53,6 +55,14 @@ func _ready() -> void:
 
 		GameState.cave_return_position = Vector2.ZERO
 
+
+
+func try_intro():
+	if GameState.has_seen_intro:
+		return
+
+	GameState.has_seen_intro = true
+	DialogueManager.show_dialogue_balloon(intro_dialogue)
 
 func _register_murderer_ids() -> void:
 	var houses := []

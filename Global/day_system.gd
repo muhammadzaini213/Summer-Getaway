@@ -157,17 +157,12 @@ func _start_day(day: int) -> void:
 
 	if player:
 
-		if GameState.pub_return_position != Vector2.ZERO:
-
-			player.global_position = GameState.pub_return_position
-
-			GameState.pub_return_position = Vector2.ZERO
-
-		else:
-
-			player.global_position = Vector2(-5, 407)
-
-			print("[DEBUG] Player position restored")
+			if GameState.pub_return_position != Vector2.ZERO:
+				player.global_position = GameState.pub_return_position
+				GameState.pub_return_position = Vector2.ZERO
+				print("[DEBUG] Player position restored from return position")
+			else:
+				print("[DEBUG] Keeping editor spawn position")
 
 	var island = get_tree().current_scene
 
