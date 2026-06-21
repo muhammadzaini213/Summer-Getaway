@@ -26,8 +26,7 @@
 [ext_resource type="Script" uid="uid://dwrqxgmcex7ni" path="res://Scenes/Worlds/cave_entrance.gd" id="21_nt2rk"]
 [ext_resource type="Texture2D" uid="uid://eufh03u0qty" path="res://Assets/Characters/mayor_idle-Sheet.png" id="22_kfwrd"]
 [ext_resource type="Texture2D" uid="uid://c8wrk5s5yywcs" path="res://Assets/MariaCorpse01.png" id="25_jfgpq"]
-[ext_resource type="Script" uid="uid://crrkiqtu0w12f" path="res://Scripts/Components/interactable.gd" id="27_aun7d"]
-[ext_resource type="Script" uid="uid://cujk0ej2sii3r" path="res://Scripts/Components/zooming.gd" id="27_dhcx4"]
+[ext_resource type="PackedScene" uid="uid://p5p8s4anxvhx" path="res://Scenes/Components/zoom.tscn" id="27_dhcx4"]
 [ext_resource type="Texture2D" uid="uid://ugdk0m4r234y" path="res://Assets/Maria_Corpse.png" id="31_7kuy4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aboc6"]
@@ -624,8 +623,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nt2rk"]
 size = Vector2(60, 51)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_dhcx4"]
-
 [node name="Island" type="Node2D" unique_id=1404676393]
 y_sort_enabled = true
 script = ExtResource("1_uaq31")
@@ -1061,37 +1058,8 @@ position = Vector2(-335, 759)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("25_jfgpq")
 
-[node name="KnifeZoom" type="Node2D" parent="." unique_id=442540818]
+[node name="Zoom" parent="." unique_id=661807070 instance=ExtResource("27_dhcx4")]
 position = Vector2(-306, 787)
-script = ExtResource("27_dhcx4")
 zoomable = ExtResource("31_7kuy4")
-
-[node name="Interactable" type="Area2D" parent="KnifeZoom" unique_id=1646219625]
-script = ExtResource("27_aun7d")
-lock_player = true
-metadata/_custom_type_script = "uid://crrkiqtu0w12f"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KnifeZoom/Interactable" unique_id=382443793]
-shape = SubResource("CircleShape2D_dhcx4")
-
-[node name="BG" type="ColorRect" parent="KnifeZoom" unique_id=240133841]
-z_index = 3
-custom_minimum_size = Vector2(22.285, 23.775)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -155.99998
-offset_top = -99.0
-offset_right = 158.00002
-offset_bottom = 91.0
-grow_horizontal = 2
-grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-color = Color(0, 0, 0, 0.6156863)
-
-[node name="Item" type="Sprite2D" parent="KnifeZoom" unique_id=581264519]
-z_index = 3
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("31_7kuy4")
 
 [editable path="Cave/Interactable"]
