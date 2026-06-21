@@ -17,9 +17,11 @@ const MAP_MAX_X := 44
 const MAP_MIN_Y := -20
 const MAP_MAX_Y := 20
 
+var intro_dialogue = preload("res://dialogues/intro.dialogue")
 
 func _ready() -> void:
 	
+	call_deferred("try_intro")
 	AudioManager.play_bgm("res://Assets/Audio/mus_gameplay.ogg")
 	add_to_group("terrain")
 
@@ -31,38 +33,36 @@ func _ready() -> void:
 
 	day_system.activate_day_system()
 	
-	if GameState.cave_discovered:
+	if GameState.has_island_return_position:
 
-		var cave = get_node_or_null("Cave")
+		$Player.global_position = (
+			GameState.consume_island_return_position()
+		)
 
-		if cave:
+	elif GameState.pub_return_position != Vector2.ZERO:
 
-			cave.visible = true
-
-		var cave_path = get_node_or_null("CavePath")
-
-		if cave_path:
-
-			cave_path.visible = true
-
-		var cave_water = get_node_or_null("CaveWater")
-
-		if cave_water:
-
-			cave_water.visible = false
-
-			cave_water.enabled = false
-	if GameState.pub_return_position != Vector2.ZERO:
-
-		$Player.global_position = GameState.pub_return_position
+		$Player.global_position = (
+			GameState.pub_return_position
+		)
 
 		GameState.pub_return_position = Vector2.ZERO
-	if GameState.cave_return_position != Vector2.ZERO:
 
-		$Player.global_position = GameState.cave_return_position
+	elif GameState.cave_return_position != Vector2.ZERO:
+
+		$Player.global_position = (
+			GameState.cave_return_position
+		)
 
 		GameState.cave_return_position = Vector2.ZERO
 
+
+
+func try_intro():
+	if GameState.has_seen_intro:
+		return
+
+	GameState.has_seen_intro = true
+	DialogueManager.show_dialogue_balloon(intro_dialogue)
 
 func _register_murderer_ids() -> void:
 	var houses := []

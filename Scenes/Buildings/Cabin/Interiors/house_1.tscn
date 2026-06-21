@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://3vwmhg4g4ua6"]
 
 [ext_resource type="Script" uid="uid://c480vnyfxbx1p" path="res://Scripts/Buildings/interior.gd" id="1_w4c7k"]
-[ext_resource type="Texture2D" uid="uid://dsw5bc5dqslnr" path="res://Assets/houseinsidetiles.png" id="3_w4c7k"]
+[ext_resource type="Texture2D" uid="uid://bdt825kcwwdd1" path="res://Assets/houseinsidetiles.png" id="3_w4c7k"]
 [ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="4_leir7"]
 [ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="5_ngoh4"]
 
@@ -173,6 +173,7 @@ position = Vector2(8, -44)
 zoom = Vector2(3, 3)
 
 [node name="Player" parent="." unique_id=1635420167 instance=ExtResource("4_leir7")]
+z_index = 3
 position = Vector2(16, -8)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1319044910]

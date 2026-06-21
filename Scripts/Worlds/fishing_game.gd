@@ -170,13 +170,33 @@ func _show_missed_text(pos: Vector2) -> void:
 	_missed_text.hide()
 
 func _hit_a_fish() -> bool:
-	# Returns whether a fish is hit. If true, delete the fish as well
+
 	var fishies := get_tree().get_nodes_in_group("fish")
+
 	for fish: Fish in fishies:
-		if _scratchpad.hook_inst.position.distance_to(fish.position) < FISHINGLINE_CAUGHT_RADIUS:
+
+		if _scratchpad.hook_inst.position.distance_to(
+			fish.position
+		) < FISHINGLINE_CAUGHT_RADIUS:
+
 			fish.queue_free()
+
 			_dialogue_state.fishies += 1
+
+			print(
+				"Fish caught:",
+				_dialogue_state.fishies,
+				"/5"
+			)
+
+			if _dialogue_state.fishies >= 5:
+
+				print("Fishing game completed!")
+
+				_end_game.call_deferred()
+
 			return true
+
 	return false
 
 func _pause_fishes(can_pause: bool = true) -> void:

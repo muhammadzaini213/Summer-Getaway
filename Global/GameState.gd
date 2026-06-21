@@ -2,6 +2,10 @@ extends Node
 
 
 var flags := {}
+
+var has_seen_intro := false
+
+
 var island_return_position := Vector2.ZERO
 var has_island_return_position := false
 var pub_return_position : Vector2 = Vector2.ZERO

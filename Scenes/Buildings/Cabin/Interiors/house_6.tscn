@@ -156,7 +156,7 @@ size = Vector2(14, 8)
 size = Vector2(26, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sx11v"]
-size = Vector2(16, 7)
+size = Vector2(32, 15.5)
 
 [node name="InteriorLayout1" type="Node2D" unique_id=465609245]
 script = ExtResource("1_mdobh")
@@ -186,7 +186,7 @@ position = Vector2(48, 12)
 shape = SubResource("RectangleShape2D_ngoh4")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D" unique_id=418900015]
-position = Vector2(16, 20)
+position = Vector2(16, 12)
 shape = SubResource("RectangleShape2D_u8uuc")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=337438928]
@@ -217,7 +217,7 @@ shape = SubResource("RectangleShape2D_m6qiv")
 position = Vector2(16, 12)
 
 [node name="CollisionShape2D" parent="Interactable" index="0" unique_id=986545324]
-position = Vector2(0, 0.5)
+position = Vector2(45, -5)
 shape = SubResource("RectangleShape2D_sx11v")
 
 [editable path="Interactable"]

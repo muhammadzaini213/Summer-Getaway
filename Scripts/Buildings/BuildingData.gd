@@ -9,9 +9,26 @@ enum BuildingTypes {
 }
 
 var interior_scenes: Dictionary = {
+
 	BuildingTypes.CABIN: {
-		"layout_one": preload("uid://bcgg5bk68tkih"),
-		"layout_two": preload("uid://b3k2d5sojvah6"),
+
+		"house_1": preload("res://Scenes/Buildings/Cabin/Interiors/house_1.tscn"),
+
+		"house_2": preload("res://Scenes/Buildings/Cabin/Interiors/house_2.tscn"),
+
+		"house_3": preload("res://Scenes/Buildings/Cabin/Interiors/house_3.tscn"),
+
+		"house_4": preload("res://Scenes/Buildings/Cabin/Interiors/house_4.tscn"),
+
+		"house_5": preload("res://Scenes/Buildings/Cabin/Interiors/house_5.tscn"),
+
+		"house_6": preload("res://Scenes/Buildings/Cabin/Interiors/house_6.tscn"),
+
+		"house_7": preload("res://Scenes/Buildings/Cabin/Interiors/house_7.tscn"),
+
+		"house_8": preload("res://Scenes/Buildings/Cabin/Interiors/house_8.tscn"),
+
+		"house_9": preload("res://Scenes/Buildings/Cabin/Interiors/house_9.tscn")
 	}
 }
 
@@ -22,7 +39,7 @@ var loaded_interiors: Dictionary = {
 var house_npc_ids: Dictionary = {}
 var murderer_house_id: int = -1
 var murderer_npc_id: String = ""
-var murderer_interior_key: StringName = &"layout_two"
+var murderer_interior_key: StringName = &"house_5"
 
 func randomize_interior(type: BuildingTypes) -> PackedScene:
 	var layouts = interior_scenes[type]

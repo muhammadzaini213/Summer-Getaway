@@ -89,7 +89,7 @@ shoot={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/npc_dialogues.dialogue", "res://dialogues/bartender.dialogue", "res://dialogues/mayor_accusation.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/npc_dialogues.dialogue", "res://dialogues/bartender.dialogue", "res://dialogues/mayor_accusation.dialogue", "res://dialogues/intro.dialogue")
 
 [layer_names]
 
