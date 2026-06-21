@@ -3,7 +3,7 @@ extends CanvasLayer
 signal day_started(day: int)
 signal day_ended(day: int)
 
-const DEFAULT_DAY_LENGTH_SECONDS := 390.0
+const DEFAULT_DAY_LENGTH_SECONDS := 360.0
 const END_MESSAGE := "It's getting late, detective. Let's continue tomorrow."
 
 var ui_built := false
@@ -67,7 +67,7 @@ func _process(delta: float) -> void:
 
 	_update_timer_label()
 
-	if not cave_revealed and time_left <= 330.0:
+	if not cave_revealed and time_left <= 180.0:
 
 		cave_revealed = true
 
