@@ -10,14 +10,13 @@ var user: CharacterBody2D
 
 func _ready() -> void:
 	finish_interact.connect(finish_interaction)
-
+	
 	if can_interact:
 		activate()
 	else:
 		deactivate()
 	
 	user = get_tree().get_first_node_in_group("player")
-
 
 func start_interaction() -> void:
 	interact.emit()
