@@ -4,6 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://cjrnad8xs30dj" path="res://Assets/houseinsidetiles2.png" id="2_hrn72"]
 [ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="3_fuou6"]
 [ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="4_a3wkc"]
+[ext_resource type="PackedScene" uid="uid://p5p8s4anxvhx" path="res://Scenes/Components/zoom.tscn" id="5_a3wkc"]
+[ext_resource type="Texture2D" uid="uid://cggm4olvhlgym" path="res://Assets/Zoomable Art/PictureFrame_Glove.png" id="6_gipl4"]
+[ext_resource type="Texture2D" uid="uid://fcpvey6rvu48" path="res://Assets/zoomable art sprites/glove.png" id="7_kau44"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ig5qv"]
 texture = ExtResource("2_hrn72")
@@ -219,5 +222,13 @@ position = Vector2(16, 12)
 [node name="CollisionShape2D" parent="Interactable" index="0" unique_id=986545324]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_sx11v")
+
+[node name="Zoom2" parent="." unique_id=661807070 instance=ExtResource("5_a3wkc")]
+position = Vector2(-13, -4)
+zoomable = ExtResource("6_gipl4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Zoom2" unique_id=1711407294]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("7_kau44")
 
 [editable path="Interactable"]

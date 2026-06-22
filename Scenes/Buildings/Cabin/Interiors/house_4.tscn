@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://p5p8s4anxvhx" path="res://Scenes/Components/zoom.tscn" id="5_igg1u"]
 [ext_resource type="Texture2D" uid="uid://cri7wxnrbt88g" path="res://Assets/Zoomable Art/Envelope.png" id="6_t0s8g"]
 [ext_resource type="Texture2D" uid="uid://bsu4xouh4280p" path="res://Assets/zoomable art sprites/envelope.png" id="6_unkbq"]
-[ext_resource type="Texture2D" uid="uid://fcpvey6rvu48" path="res://Assets/zoomable art sprites/glove.png" id="7_st8hp"]
-[ext_resource type="Texture2D" uid="uid://cggm4olvhlgym" path="res://Assets/Zoomable Art/PictureFrame_Glove.png" id="8_hw02j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_igg1u"]
 texture = ExtResource("2_lofb5")
@@ -232,13 +230,5 @@ zoomable = ExtResource("6_t0s8g")
 [node name="Sprite2D" type="Sprite2D" parent="Zoom" unique_id=82877266]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("6_unkbq")
-
-[node name="Zoom2" parent="." unique_id=439586689 instance=ExtResource("5_igg1u")]
-position = Vector2(-13, -4)
-zoomable = ExtResource("8_hw02j")
-
-[node name="Sprite2D" type="Sprite2D" parent="Zoom2" unique_id=1484536244]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("7_st8hp")
 
 [editable path="Interactable"]

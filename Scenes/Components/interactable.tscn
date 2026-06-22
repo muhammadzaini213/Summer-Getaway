@@ -1,35 +1,12 @@
 [gd_scene format=3 uid="uid://dl0xepi7dlidx"]
 
 [ext_resource type="Script" uid="uid://crrkiqtu0w12f" path="res://Scripts/Components/interactable.gd" id="1_elvmf"]
-[ext_resource type="Texture2D" uid="uid://bpxo4j5wl6b36" path="res://Assets/E_ButtonKeys01_1.png" id="2_ntf5p"]
-[ext_resource type="Texture2D" uid="uid://cwk3dt8ayqhqe" path="res://Assets/E_ButtonKeys01_2.png" id="3_ntjna"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dmmmo"]
 radius = 30.0
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_bc0cy"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_ntf5p")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ntjna")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Interactable" type="Area2D" unique_id=434908918]
 script = ExtResource("1_elvmf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=986545324]
 shape = SubResource("CircleShape2D_dmmmo")
-
-[node name="Interact" type="AnimatedSprite2D" parent="." unique_id=679187802]
-z_index = 2
-position = Vector2(1, 0)
-scale = Vector2(0.46875, 0.46875)
-sprite_frames = SubResource("SpriteFrames_bc0cy")
-autoplay = "default"
