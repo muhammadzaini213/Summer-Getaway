@@ -20,6 +20,7 @@ var _fade: ColorRect
 var _message_box: PanelContainer
 var _message_label: Label
 
+var day_system_started := false
 
 func _ready() -> void:
 
@@ -36,6 +37,8 @@ func _ready() -> void:
 	visible = false
 
 	timer_running = false
+	
+	activate_day_system()
 
 func activate_day_system() -> void:
 
@@ -66,32 +69,50 @@ func _process(delta: float) -> void:
 	time_left = maxf(time_left - delta, 0.0)
 
 	_update_timer_label()
+	
+	if cave_revealed and time_left <= 180.0: cave_show()
+	else: cave_hide()
+	
+	#if not cave_revealed and time_left <= 180.0:
 
-	if not cave_revealed and time_left <= 180.0:
-
-		cave_revealed = true
-
-		var island = get_tree().current_scene
-
-		var cave = island.get_node_or_null("Cave")
-
-		if cave:
-			cave.visible = true
-
-		var cave_path = island.get_node_or_null("CavePath")
-
-		if cave_path:
-			cave_path.visible = true
-
-		var cave_water = island.get_node_or_null("CaveWater")
-
-		if cave_water:
-			cave_water.visible = false
-			cave_water.enabled = false
+		#cave_revealed = true
+#
+		#var island = get_tree().current_scene
+#
+		#var cave = island.get_node_or_null("Cave")
+#
+		#if cave:
+			#cave.visible = true
+#
+		#var cave_path = island.get_node_or_null("CavePath")
+#
+		#if cave_path:
+			#cave_path.visible = true
+#
+		#var cave_water = island.get_node_or_null("CaveWater")
+#
+		#if cave_water:
+			#cave_water.visible = false
+			#cave_water.enabled = false
 
 	if time_left <= 0.0:
 		_end_day()
 
+func cave_show() -> void:
+	var scn := get_tree().current_scene
+	if not scn or scn.name != "Island": return
+	scn.get_node("CaveWater").hide()
+	scn.get_node("CaveWater").enabled = false
+	scn.get_node("CavePath").show()
+	scn.get_node("Cave").show()
+
+func cave_hide() -> void:
+	var scn := get_tree().current_scene
+	if not scn or scn.name != "Island": return
+	scn.get_node("CaveWater").show()
+	scn.get_node("CaveWater").enabled = true
+	scn.get_node("CavePath").hide()
+	scn.get_node("Cave").hide()
 
 func _unhandled_input(event: InputEvent) -> void:
 	if not OS.is_debug_build():
@@ -133,7 +154,7 @@ func set_day_length(seconds: float) -> void:
 
 func _start_day(day: int) -> void:
 
-	cave_revealed = false
+	#cave_revealed = false
 
 	time_left = day_length_seconds
 
@@ -164,23 +185,17 @@ func _start_day(day: int) -> void:
 			else:
 				print("[DEBUG] Keeping editor spawn position")
 
-	var island = get_tree().current_scene
-
-	var cave = island.get_node_or_null("Cave")
-
-	if cave:
-		cave.visible = false
-
-	var cave_path = island.get_node_or_null("CavePath")
-
-	if cave_path:
-		cave_path.visible = false
-
-	var cave_water = island.get_node_or_null("CaveWater")
-
-	if cave_water:
-		cave_water.visible = true
-		cave_water.enabled = true
+	#var island = get_tree().current_scene
+	#var cave = island.get_node_or_null("Cave")
+	#if cave:
+		#cave.visible = false
+	#var cave_path = island.get_node_or_null("CavePath")
+	#if cave_path:
+		#cave_path.visible = false
+	#var cave_water = island.get_node_or_null("CaveWater")
+	#if cave_water:
+		#cave_water.visible = true
+		#cave_water.enabled = true
 
 	day_started.emit(day)
 
@@ -191,11 +206,11 @@ func _end_day() -> void:
 	get_tree().paused = true
 	_set_players_can_move(false)
 	day_ended.emit(current_day)
-
+	
 	_fade.visible = true
 	_message_box.visible = true
 	_message_label.text = END_MESSAGE
-
+	
 	var tween := create_tween()
 	tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	tween.tween_property(_fade, "modulate:a", 0.85, 0.7)
@@ -204,8 +219,10 @@ func _end_day() -> void:
 	tween.tween_property(_message_box, "modulate:a", 0.0, 0.3)
 	tween.tween_property(_fade, "modulate:a", 0.0, 0.5)
 	await tween.finished
-
+	
 	start_next_day()
+	
+	
 
 
 func _set_players_can_move(can_move: bool) -> void:

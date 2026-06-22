@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bdt825kcwwdd1" path="res://Assets/houseinsidetiles.png" id="2_wyvr0"]
 [ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="3_wtxrp"]
 [ext_resource type="PackedScene" uid="uid://dl0xepi7dlidx" path="res://Scenes/Components/interactable.tscn" id="4_2khvd"]
+[ext_resource type="PackedScene" uid="uid://p5p8s4anxvhx" path="res://Scenes/Components/zoom.tscn" id="5_wtxrp"]
+[ext_resource type="Texture2D" uid="uid://dph6vnalscbw" path="res://Assets/zoomable art sprites/redboot.png" id="6_2khvd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ngoh4"]
 texture = ExtResource("2_wyvr0")
@@ -219,5 +221,12 @@ position = Vector2(16, 12)
 [node name="CollisionShape2D" parent="Interactable" index="0" unique_id=986545324]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_sx11v")
+
+[node name="Zoom" parent="." unique_id=661807070 instance=ExtResource("5_wtxrp")]
+position = Vector2(-10, -20)
+
+[node name="Sprite2D" type="Sprite2D" parent="Zoom" unique_id=407606148]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("6_2khvd")
 
 [editable path="Interactable"]

@@ -5,7 +5,7 @@ const GUNTIME := 0.75
 
 @export var player: PlayerFinalFight
 
-@onready var sprite: AnimatedSprite2D = $Sprite
+@onready var sprite: Sprite2D = $Sprite
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var view_cast: RayCast2D = $ViewCast
 
@@ -15,6 +15,7 @@ var bullet_fab: PackedScene = preload("uid://dn4cqyeqdqngr")
 
 func _ready() -> void:
 	health_bar.modulate = Color(1, 1, 1, 0)
+	sprite.frame = GameResult.murderer_sprite_frame
 
 func _physics_process(delta: float) -> void:
 	if gun_timer > 0.0:
@@ -28,12 +29,12 @@ func _brains() -> void:
 	var target_dir_raw := position.direction_to(player.position)
 	var ref_dir := Vector2(0, 1)
 	var target_dir := Vector2(0, ref_dir.dot(target_dir_raw))
-	if target_dir.y > 0.05:
-		sprite.animation = "walk_down"
-	elif target_dir.y < -0.05:
-		sprite.animation = "walk_down"
-	else:
-		sprite.animation = "idle"
+	#if target_dir.y > 0.05:
+		#sprite.animation = "walk_down"
+	#elif target_dir.y < -0.05:
+		#sprite.animation = "walk_down"
+	#else:
+		#sprite.animation = "idle"
 	velocity = target_dir * 160.0
 	
 	if view_cast.is_colliding() and view_cast.get_collider() is PlayerFinalFight and gun_timer <= 0.0:
@@ -79,8 +80,6 @@ func is_hit() -> void:
 
 		AudioManager.stop_bgm()
 
-		AudioManager.play_bgm("res://Assets/Audio/mus_win.ogg")
+		get_tree().change_scene_to_file("uid://qfyyh0yx5kby")
 
 		queue_free()
-
-		$"../Lost".show()

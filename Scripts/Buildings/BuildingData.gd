@@ -41,6 +41,8 @@ var murderer_house_id: int = -1
 var murderer_npc_id: String = ""
 var murderer_interior_key: StringName = &"house_5"
 
+
+
 func randomize_interior(type: BuildingTypes) -> PackedScene:
 	var layouts = interior_scenes[type]
 

@@ -8,8 +8,8 @@
 [ext_resource type="Shader" uid="uid://ds8fidkdoysux" path="res://Scripts/Components/final_fight_flash.gdshader" id="4_o051f"]
 [ext_resource type="Texture2D" uid="uid://fcw2t1wqmu87" path="res://Assets/Characters/sprite player idle+rotate-Sheet.png" id="4_sniw3"]
 [ext_resource type="Script" uid="uid://bfxm7iygvnyqm" path="res://Scripts/Entities/murderer_final_fight.gd" id="8_33bfd"]
-[ext_resource type="Texture2D" uid="uid://cciylnwvw7twt" path="res://Assets/UI/You_Lost01.png" id="9_hg0h4"]
-[ext_resource type="Texture2D" uid="uid://cuiu7jpf568if" path="res://Assets/UI/You_Win02.png" id="10_17uw8"]
+[ext_resource type="Texture2D" uid="uid://cyfmrxdn5olsa" path="res://Assets/Sprite/Gun01_Side.png" id="8_hg0h4"]
+[ext_resource type="Texture2D" uid="uid://bpjqqjxb7750n" path="res://Assets/Characters/npcs side - bad expressions-Sheet.png" id="10_17uw8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sniw3"]
 texture = ExtResource("3_aa3wx")
@@ -229,6 +229,12 @@ autoplay = "idle"
 frame = 2
 frame_progress = 0.1826501
 
+[node name="Gun" type="Sprite2D" parent="Player" unique_id=1343619470]
+material = SubResource("ShaderMaterial_33bfd")
+position = Vector2(11, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_hg0h4")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" unique_id=572183508]
 shape = SubResource("CapsuleShape2D_sniw3")
 
@@ -249,14 +255,18 @@ position = Vector2(114, 51)
 script = ExtResource("8_33bfd")
 player = NodePath("../Player")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="Murderer" unique_id=1493096234]
+[node name="Sprite" type="Sprite2D" parent="Murderer" unique_id=265209261]
 material = SubResource("ShaderMaterial_4aj0f")
 scale = Vector2(0.5, 0.5)
-sprite_frames = SubResource("SpriteFrames_hmi61")
-animation = &"idle"
-autoplay = "idle"
-frame = 2
-frame_progress = 0.1826501
+texture = ExtResource("10_17uw8")
+hframes = 5
+vframes = 2
+
+[node name="Gun" type="Sprite2D" parent="Murderer" unique_id=1497851578]
+material = SubResource("ShaderMaterial_33bfd")
+position = Vector2(-11, 0)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_hg0h4")
 flip_h = true
 
 [node name="ViewCast" type="RayCast2D" parent="Murderer" unique_id=1796502446]
@@ -276,17 +286,3 @@ show_percentage = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Murderer" unique_id=940523766]
 shape = SubResource("CapsuleShape2D_sniw3")
-
-[node name="Lost" type="Sprite2D" parent="." unique_id=448097120]
-visible = false
-z_index = 5
-position = Vector2(0.33332825, 0.5)
-scale = Vector2(0.15648146, 0.15648147)
-texture = ExtResource("9_hg0h4")
-
-[node name="Won" type="Sprite2D" parent="." unique_id=310745738]
-visible = false
-z_index = 5
-position = Vector2(0.33332825, 0.5)
-scale = Vector2(0.15648146, 0.15648147)
-texture = ExtResource("10_17uw8")

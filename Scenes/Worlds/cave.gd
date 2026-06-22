@@ -11,7 +11,7 @@ func _ready() -> void:
 	var player = get_tree().get_first_node_in_group("player")
 
 	if player:
-		player.global_position = $PlayerSpawn.global_position
+		_set_starting_pos.call_deferred()
 
 
 func _process(_delta: float) -> void:
@@ -20,6 +20,9 @@ func _process(_delta: float) -> void:
 			"res://Scenes/Worlds/Levels/island.tscn"
 		)
 
+
+func _set_starting_pos() -> void:
+	$Player.position = $PlayerSpawn.global_position
 
 func _on_enter(body) -> void:
 	if body.is_in_group("player"):

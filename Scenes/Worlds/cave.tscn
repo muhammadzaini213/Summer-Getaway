@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cd20bqb84q7v1"]
 
 [ext_resource type="Script" uid="uid://d2m1n770k61lt" path="res://Scenes/Worlds/cave.gd" id="1_oo41j"]
-[ext_resource type="Texture2D" uid="uid://ggqcwcelyqb5" path="res://Assets/crimescene.png" id="2_qebwy"]
 [ext_resource type="Script" uid="uid://byusx71pswssa" path="res://Scenes/Worlds/cave_exit.gd" id="2_sifxj"]
 [ext_resource type="PackedScene" uid="uid://bn5wx7yq8u14t" path="res://Scenes/Entities/player.tscn" id="3_od6co"]
 [ext_resource type="Texture2D" uid="uid://ydkqeyxlhkel" path="res://Assets/cave floor.png" id="4_b5dil"]
@@ -9,6 +8,10 @@
 [ext_resource type="Texture2D" uid="uid://bahddwuduybtj" path="res://Assets/cave wall front.png" id="6_mt2ob"]
 [ext_resource type="Texture2D" uid="uid://boo6ohdy8p4mi" path="res://Assets/cave wall side.png" id="6_sifxj"]
 [ext_resource type="Texture2D" uid="uid://ggqcwcelyqb5" path="res://Assets/crimescene.png" id="8_qebwy"]
+[ext_resource type="PackedScene" uid="uid://p5p8s4anxvhx" path="res://Scenes/Components/zoom.tscn" id="9_56xs4"]
+[ext_resource type="Texture2D" uid="uid://yhp71e51cvpq" path="res://Assets/Zoomable Art/Bloody_Glove.png" id="10_octiu"]
+[ext_resource type="Texture2D" uid="uid://c8b0qo8ftedp8" path="res://Assets/Zoomable Art/Blood_Puddle.png" id="11_3ja3g"]
+[ext_resource type="Texture2D" uid="uid://hm25wb2010ms" path="res://Assets/Zoomable Art/Bloody_Knife.png" id="12_octiu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mt2ob"]
 size = Vector2(119.06976, 130.1695)
@@ -35,9 +38,7 @@ size = Vector2(34, 201)
 script = ExtResource("1_oo41j")
 
 [node name="PlayerSpawn" type="Marker2D" parent="." unique_id=926884666]
-
-[node name="MurderScene" type="Sprite2D" parent="." unique_id=1694915271]
-texture = ExtResource("2_qebwy")
+position = Vector2(-8, 55)
 
 [node name="ExitRocks" type="Sprite2D" parent="." unique_id=1649233964]
 position = Vector2(-8, 92.999985)
@@ -112,8 +113,21 @@ position = Vector2(-6.49999, -92.99999)
 scale = Vector2(0.345, 0.345)
 texture = ExtResource("6_mt2ob")
 
-[node name="Crimescene" type="Sprite2D" parent="." unique_id=1257538895]
+[node name="MurderScene" type="Sprite2D" parent="." unique_id=1694915271]
+position = Vector2(-9, 8)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("8_qebwy")
+
+[node name="Glove" parent="." unique_id=661807070 instance=ExtResource("9_56xs4")]
+position = Vector2(-38, 3)
+zoomable = ExtResource("10_octiu")
+
+[node name="Puddle" parent="." unique_id=1527906363 instance=ExtResource("9_56xs4")]
+position = Vector2(0, -1)
+zoomable = ExtResource("11_3ja3g")
+
+[node name="Knife" parent="." unique_id=778975021 instance=ExtResource("9_56xs4")]
+position = Vector2(27, 23)
+zoomable = ExtResource("12_octiu")
 
 [connection signal="body_entered" from="ExitRocks/Area2D" to="." method="_on_area_2d_body_entered"]

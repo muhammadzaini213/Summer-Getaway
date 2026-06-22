@@ -1,0 +1,250 @@
+[gd_scene format=3 uid="uid://da43e1clrwj4g"]
+
+[ext_resource type="Script" uid="uid://djvv2si1qfhyy" path="res://Scripts/Worlds/prologue.gd" id="1_0icqm"]
+[ext_resource type="Texture2D" uid="uid://c8ipoxar14e25" path="res://Assets/Maria Cutscenes/Maria_Cutscenes_1_01.png" id="1_we8ct"]
+[ext_resource type="Texture2D" uid="uid://dpa776g1yftq4" path="res://Assets/Maria Cutscenes/Manga_Word_Bubble_1_01.png" id="3_jjxyy"]
+[ext_resource type="Texture2D" uid="uid://bsgeckpc80dlg" path="res://Assets/Maria Cutscenes/Maria_Cutscenes_2_01.png" id="4_jjxyy"]
+[ext_resource type="Texture2D" uid="uid://b11yks3qdc7wk" path="res://Assets/Maria Cutscenes/Maria_Cutscenes_6_01.png" id="5_2ja6b"]
+[ext_resource type="Texture2D" uid="uid://ckgkbs7r7fubx" path="res://Assets/Maria Cutscenes/Maria_Cutscenes_4_01.png" id="5_dfmn8"]
+[ext_resource type="Texture2D" uid="uid://dq6cyy6tu1a1n" path="res://Assets/Maria Cutscenes/Maria_Cutscenes_3_01.png" id="5_hjv2i"]
+[ext_resource type="Texture2D" uid="uid://ciisf3xby76oj" path="res://Assets/Maria Cutscenes/Maria_Cutscenes_5_01.png" id="5_jm3he"]
+[ext_resource type="Texture2D" uid="uid://cggxi5g7bks8m" path="res://Assets/Maria Cutscenes/Manga_Word_Bubble_2_01.png" id="6_k6r7q"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0icqm"]
+font_size = 28
+font_color = Color(0, 0, 0, 1)
+
+[node name="Scene" type="Control" unique_id=128233446]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0icqm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1947541060]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slide1" type="Control" parent="." unique_id=1887995011]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slide1" type="TextureRect" parent="Slide1" unique_id=178453035]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 653.0
+texture = ExtResource("1_we8ct")
+
+[node name="Bubble" type="TextureRect" parent="Slide1" unique_id=1833439007]
+layout_mode = 0
+offset_left = 687.0
+offset_top = -4.0
+offset_right = 1183.0
+offset_bottom = 361.0
+texture = ExtResource("3_jjxyy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Slide1/Bubble" unique_id=205652634]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 104.0
+offset_right = 410.0
+offset_bottom = 269.0
+text = "Hi, Welcome to Treasure Island! I'm Maria"
+label_settings = SubResource("LabelSettings_0icqm")
+autowrap_mode = 2
+
+[node name="Slide2" type="Control" parent="." unique_id=1428368487]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slide1" type="TextureRect" parent="Slide2" unique_id=1974233723]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 653.0
+texture = ExtResource("4_jjxyy")
+
+[node name="Bubble" type="TextureRect" parent="Slide2" unique_id=1916883500]
+layout_mode = 0
+offset_left = 545.0
+offset_top = -11.0
+offset_right = 1041.0
+offset_bottom = 354.0
+texture = ExtResource("3_jjxyy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Slide2/Bubble" unique_id=1876647289]
+layout_mode = 0
+offset_left = 145.0
+offset_top = 104.0
+offset_right = 410.0
+offset_bottom = 269.0
+text = "Let me show you around."
+label_settings = SubResource("LabelSettings_0icqm")
+autowrap_mode = 2
+
+[node name="Slide3" type="Control" parent="." unique_id=1698556192]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slide1" type="TextureRect" parent="Slide3" unique_id=1542314034]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 653.0
+texture = ExtResource("5_hjv2i")
+
+[node name="Bubble" type="TextureRect" parent="Slide3" unique_id=2028721704]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 91.0
+offset_right = 1001.0
+offset_bottom = 335.0
+texture = ExtResource("3_jjxyy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Slide3/Bubble" unique_id=122633839]
+layout_mode = 0
+offset_left = 106.0
+offset_top = 73.0
+offset_right = 415.0
+offset_bottom = 238.0
+text = "What brings you here?"
+label_settings = SubResource("LabelSettings_0icqm")
+autowrap_mode = 2
+
+[node name="Bubble2" type="TextureRect" parent="Slide3" unique_id=554121608]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 186.0
+offset_right = 644.0
+offset_bottom = 329.0
+texture = ExtResource("6_k6r7q")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Slide3/Bubble2" unique_id=1279567074]
+layout_mode = 0
+offset_left = 129.0
+offset_top = 50.0
+offset_right = 438.0
+offset_bottom = 215.0
+text = "Just on a vacation"
+label_settings = SubResource("LabelSettings_0icqm")
+autowrap_mode = 2
+
+[node name="Bubble3" type="TextureRect" parent="Slide3" unique_id=854716881]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 213.0
+offset_right = 1001.0
+offset_bottom = 335.0
+texture = ExtResource("3_jjxyy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Slide3/Bubble3" unique_id=617953798]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 45.0
+offset_right = 411.0
+offset_bottom = 210.0
+text = "That's great!"
+label_settings = SubResource("LabelSettings_0icqm")
+autowrap_mode = 2
+
+[node name="Slide4" type="Control" parent="." unique_id=1756488418]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slide1" type="TextureRect" parent="Slide4" unique_id=939001472]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 653.0
+texture = ExtResource("5_dfmn8")
+
+[node name="Bubble" type="TextureRect" parent="Slide4" unique_id=547910941]
+layout_mode = 0
+offset_left = 545.0
+offset_top = -11.0
+offset_right = 1041.0
+offset_bottom = 354.0
+texture = ExtResource("3_jjxyy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Slide4/Bubble" unique_id=991900975]
+layout_mode = 0
+offset_left = 137.0
+offset_top = 57.0
+offset_right = 402.0
+offset_bottom = 306.0
+text = "That's the pub right over their. It's got a lovely selection of drinks and brunch on the menu."
+label_settings = SubResource("LabelSettings_0icqm")
+autowrap_mode = 2
+
+[node name="Slide5" type="Control" parent="." unique_id=339504394]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slide1" type="TextureRect" parent="Slide5" unique_id=989183739]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 653.0
+texture = ExtResource("5_jm3he")
+
+[node name="Bubble" type="TextureRect" parent="Slide5" unique_id=1166019903]
+layout_mode = 0
+offset_left = 545.0
+offset_top = -11.0
+offset_right = 1041.0
+offset_bottom = 354.0
+texture = ExtResource("3_jjxyy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Slide5/Bubble" unique_id=1666542070]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 76.0
+offset_right = 396.0
+offset_bottom = 283.0
+text = "And there's the Great Eastern Express Hotel. Their buffet is the best."
+label_settings = SubResource("LabelSettings_0icqm")
+autowrap_mode = 2
+
+[node name="Slide6" type="Control" parent="." unique_id=29173635]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Slide1" type="TextureRect" parent="Slide6" unique_id=2136530650]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 653.0
+texture = ExtResource("5_2ja6b")
+
+[node name="Bubble" type="TextureRect" parent="Slide6" unique_id=767746543]
+layout_mode = 0
+offset_left = 545.0
+offset_top = -11.0
+offset_right = 1041.0
+offset_bottom = 354.0
+texture = ExtResource("3_jjxyy")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Slide6/Bubble" unique_id=1603304009]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 139.0
+offset_right = 418.0
+offset_bottom = 304.0
+text = "Hope you have a wonderful stay!"
+label_settings = SubResource("LabelSettings_0icqm")
+autowrap_mode = 2

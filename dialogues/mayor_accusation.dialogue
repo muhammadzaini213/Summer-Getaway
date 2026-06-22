@@ -4,31 +4,32 @@ Mayor: Hello there, detective! Did you catch the killer?
 	Mayor: Okay, you can continue your work now.
 - Yes.
 	Oh? Who is that scumbag who committed such a thing? Tell me!
-	- NPC 1
+	- Amber
 		$> GameEvents.print_garbage()
 		do GameResult.check_accusation("npc1")
-	- NPC 2
+	- Catherine
 		$> GameEvents.print_garbage()
 		do GameResult.check_accusation("npc2")
-	- NPC 3
+	- Anastasia
 		$> GameEvents.print_garbage()
 		do GameResult.check_accusation("npc3")
-	- NPC 4
+	- Ron
 		$> GameEvents.print_garbage()
 		do GameResult.check_accusation("npc4")
-	- NPC 5
+	- Gordon
 		$> GameEvents.print_garbage()
 		do GameResult.check_accusation("npc5")
-	- NPC 6
+	- John
 		$> GameEvents.print_garbage()
 		do GameResult.check_accusation("npc6")
-	- NPC 7
+	- Rudy
 		$> GameEvents.print_garbage()
 		do GameResult.check_accusation("npc7")
-	- NPC 8
+	- Barbara
 		$> GameEvents.print_garbage()
 		do GameResult.check_accusation("npc8")
-	- NPC 9
+	- Lucas
 		$> GameEvents.print_garbage()
-		do GameResult.check_accusation("npc1")
+		do GameResult.check_accusation("npc9")
+	- Nevermind, I need more time.
 => END

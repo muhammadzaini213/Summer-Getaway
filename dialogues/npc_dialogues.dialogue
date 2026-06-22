@@ -1,65 +1,65 @@
 ~ npc1
 # WRITE NPC1 DIALOGUE HERE
-NPC 1: I feel the girl is faking her death... You never know.
+Amber: I feel the girl is faking her death... You never know.
 - Why would she fake her death?
-	NPC 1: I've heard rumors that she wants to be left alone with her lover. So, this could be her chance.
+	Amber: I've heard rumors that she wants to be left alone with her lover. So, this could be her chance.
 - Are you saying the corpse at the crime scene isn't her?
-	NPC 1: Could be someone else, an identical twin. I don't know.
+	Amber: Could be someone else, an identical twin. I don't know.
 => END
 
 ~ npc2
 # WRITE NPC2 DIALOGUE HERE
-NPC 2: Oh, this recent news is horrifying! I wonder how a man could do that?
+Catherine: Oh, this recent news is horrifying! I wonder how a man could do that?
 - What makes you think the culprit is a man?
-	NPC 2: Haven't you heard the rumors that she had a lover? Who knows, maybe they got into a fight and things go heated?
+	Catherine: Haven't you heard the rumors that she had a lover? Who knows, maybe they got into a fight and things go heated?
 => END
 
 ~ npc3
 # WRITE NPC3 DIALOGUE HERE
-NPC 3: I feel it's the mayor.
+Anastasia: I feel it's the mayor.
 - That's a serious accusation. Anything to back that up?
-	NPC 3: I suggest that you look into the election results of last year. Maybe you can find the poll results around the Mayor's office.
+	Anastasia: I suggest that you look into the election results of last year. Maybe you can find the poll results around the Mayor's office.
 #- I found the poll results. You lost by a point. [if true /]
 #	NPC 3: All I'm saying is that if I had won the election this wouldn't be happening.
 => END
 
 ~ npc4
 # WRITE NPC4 DIALOGUE HERE
-NPC 4: Hey, if I was the killer I would hide in the bay area.
+Ron: Hey, if I was the killer I would hide in the bay area.
 => END
 
 ~ npc5
 # WRITE NPC5 DIALOGUE HERE
-NPC 5: Leave no stone unturned. The killer might've gotten clumsy and left something at the crime scene.
+Gordon: Leave no stone unturned. The killer might've gotten clumsy and left something at the crime scene.
 => END
 
 ~ npc6
 # WRITE NPC6 DIALOGUE HERE
-NPC 6: The Mayor gave you a warrant, right? You should go check everyone's houses at the village. If they're really innocent they'd have nothing to hide.
+John: The Mayor gave you a warrant, right? You should go check everyone's houses at the village. If they're really innocent they'd have nothing to hide.
 - The killer could've easily planted false evidence.
-	NPC 6: I mean, it definitely doesn't help their case if you found the murder weapon at their house either.
+	John: I mean, it definitely doesn't help their case if you found the murder weapon at their house either.
 - Thanks for the tip. I'll keep it in mind.
-	NPC 6: No problem. The faster you solve this case, the quicker things can get back to normal.
+	John: No problem. The faster you solve this case, the quicker things can get back to normal.
 => END
 
 ~ npc7
 # WRITE NPC7 DIALOGUE HERE
-NPC 7: Hey, Sherlock, here's something to think about. If the killer's really smart they'd plant evidence in people's houses. Hehehe...
+Rudy: Hey, Sherlock, here's something to think about. If the killer's really smart they'd plant evidence in people's houses. Hehehe...
 => END
 
 ~ npc8
 # WRITE NPC8 DIALOGUE HERE
-NPC 8: Just between you and me - my guts tell me the real culprit is the bartender.
+Barbara: Just between you and me - my guts tell me the real culprit is the bartender.
 - What makes you think it's the bartender?
-	NPC 8: Think about it. They know the ins and outs of the town. The pub is the center of info around here. Seems like the perfect place to hush things to a rumor.
+	Barbara: Think about it. They know the ins and outs of the town. The pub is the center of info around here. Seems like the perfect place to hush things to a rumor.
 - And what would the bartender's motive be?
-	NPC 8: That girl who got murdered was nice, but she was a lot of handle at times. Could have just gotten fed up with her.
-	NPC 8: Also, haven't you heard the rumors about the girl being involved in an affair? Maybe they were involved in it.
+	Barbara: That girl who got murdered was nice, but she was a lot of handle at times. Could have just gotten fed up with her.
+	Barbara: Also, haven't you heard the rumors about the girl being involved in an affair? Maybe they were involved in it.
 => END
 
 ~ npc9
 # WRITE NPC9 DIALOGUE HERE
-NPC 9: Yo, nice outfit. Sometimes I like to play pretend too!
+Lucas: Yo, nice outfit. Sometimes I like to play pretend too!
 => END
 
 ~ npc10
@@ -87,6 +87,24 @@ Fisherman: You there! Yeah, I'm talking to you, Mr. Sunshine!
 		=> END
 	- I'm sorry, maybe Another time?
 - That's my cue to leave, sorry...
+=> END
+
+~ fisherman_comp
+% Fisherman: Nice catch!
+% Fisherman: Not bad!
+% Fisherman: Good one!
+=> END
+
+~ fisherman_fail
+%2 Fisherman: Try again.
+% Fisherman: The water seems like the safest place on Earth.
+%2 Fisherman: Not looking good.
+=> END
+
+~ fisherman_clue
+Fisherman: Alright, Sunshine, here's your prize.
+Fisherman: Check out the cave on the south-eastern point of the island. You can miss it, so be sure to look carefully. Also, it's only visible after sundown when the tide's low.
+Fisherman: Don't ask why.
 => END
 
 ~ mayor

@@ -20,7 +20,7 @@ var _dialogue_resource: DialogueResource = preload("uid://d2oy26xh7v5pn")
 
 signal FishGameRelease
 
-enum {IDLE, BRINGPLAYER, GAMEIDLE, GAMEAIM, THROWING, LAND, OUTPUT, GAMEOVER}
+enum {IDLE, BRINGPLAYER, GAMEIDLE, GAMEAIM, THROWING, LAND, DWAIT, OUTPUT, GAMEOVER}
 var _scratchpad := {}
 var _dialogue_state := {
 	"game": false,
@@ -50,6 +50,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if not _scratchpad.has('game_state'):
 		return
+	
+	if _dialogue_state.fishies >= 5:
+		DaySystem.cave_revealed = true
 	
 	match _scratchpad.game_state:
 		IDLE:
@@ -134,16 +137,20 @@ func _process(delta: float) -> void:
 				if (_scratchpad.hook_inst.position.distance_to(_fishing_rod.global_position) < 0.1):
 					_scratchpad.hook_inst.queue_free()
 					_scratchpad.hook_inst = null
-					_pause_fishes(false)
-					_scratchpad.game_state = OUTPUT
+					_complement()
+					_scratchpad.game_state = DWAIT
 			else: 
 				# Let the player repent in silence
 				_scratchpad.land_timer -= delta
 				if _scratchpad.land_timer < 0.0:
 					_scratchpad.hook_inst.queue_free()
 					_scratchpad.hook_inst = null
-					_pause_fishes(false)
-					_scratchpad.game_state = OUTPUT
+					_fail()
+					_scratchpad.game_state = DWAIT
+		DWAIT:
+			if not _scratchpad.has("inter"):
+				_pause_fishes(false)
+				_scratchpad.game_state = OUTPUT
 		OUTPUT:
 			# Self-explanatory
 			if _scratchpad.hit_a_fish:
@@ -157,6 +164,21 @@ func _process(delta: float) -> void:
 			tweener.tween_property(_fishing_dir, "modulate", Color(1, 1, 1, 1), 0.25)
 			_fishing_power.value = 0.0
 			_scratchpad.game_state = GAMEIDLE
+
+func _complement() -> void:
+	DialogueManager.show_dialogue_balloon(_dialogue_resource, "fisherman_comp")
+	if not DialogueManager.dialogue_ended.is_connected(_interrupt_ended):
+		DialogueManager.dialogue_ended.connect(_interrupt_ended) 
+	_scratchpad.inter = true
+
+func _fail() -> void:
+	DialogueManager.show_dialogue_balloon(_dialogue_resource, "fisherman_fail")
+	if not DialogueManager.dialogue_ended.is_connected(_interrupt_ended):
+		DialogueManager.dialogue_ended.connect(_interrupt_ended)
+	_scratchpad.inter = true
+
+func _interrupt_ended(_resource: DialogueResource) -> void:
+	_scratchpad.erase("inter")
 
 func _show_missed_text(pos: Vector2) -> void:
 	# For flashing "Missed!" at a specfied position
@@ -190,8 +212,10 @@ func _hit_a_fish() -> bool:
 			)
 
 			if _dialogue_state.fishies >= 5:
-
+				_scratchpad.hook_inst.queue_free()
 				print("Fishing game completed!")
+				DialogueManager.show_dialogue_balloon(_dialogue_resource, "fisherman_clue")
+				DaySystem.cave_revealed = true
 
 				_end_game.call_deferred()
 
@@ -243,4 +267,5 @@ func _end_game() -> void:
 	_fishing_power.modulate = Color(1, 1, 1, 0)
 	_fishing_line.points = PackedVector2Array([])
 	_fishing_power.value = 0.0
+	_pause_fishes(false)
 	FishGameRelease.emit()

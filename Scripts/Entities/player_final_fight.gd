@@ -71,9 +71,6 @@ func is_hit() -> void:
 	if health <= 0:
 
 		AudioManager.stop_bgm()
-
-		AudioManager.play_bgm("res://Assets/Audio/mus_lose.ogg")
+		get_tree().change_scene_to_file("uid://dju0leywqnskg")
 
 		queue_free()
-
-		$"../Lost".show()

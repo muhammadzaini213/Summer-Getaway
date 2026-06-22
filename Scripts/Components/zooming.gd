@@ -24,7 +24,6 @@ func _process(delta: float) -> void:
 		item_shown = false
 
 func _on_interact() -> void:
-	
 	AudioManager.play_sfx(AudioManager.NOTICE)
 	var view := get_viewport()
 	var cam := view.get_camera_2d()

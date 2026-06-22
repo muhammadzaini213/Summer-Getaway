@@ -40,6 +40,8 @@ func _ready() -> void:
 	facing_direction = "down"
 
 	animated_sprite_2d.play("idle_down")
+	
+	DaySystem.day_started.connect(_go_to_hotel)
 
 
 func _physics_process(_delta: float) -> void:
@@ -142,3 +144,6 @@ func _play_direction_animation(prefix: String) -> void:
 		if animated_sprite_2d.animation != animation_name:
 
 			animated_sprite_2d.play(animation_name)
+
+func _go_to_hotel(day: int) -> void:
+	position = Vector2(-634, 753)

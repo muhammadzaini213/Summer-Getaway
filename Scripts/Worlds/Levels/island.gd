@@ -22,16 +22,16 @@ var intro_dialogue = preload("res://dialogues/intro.dialogue")
 func _ready() -> void:
 	
 	call_deferred("try_intro")
-	AudioManager.play_bgm("res://Assets/Audio/mus_gameplay.ogg")
+	AudioManager.play_bgm.call_deferred("res://Assets/Audio/mus_gameplay.ogg")
 	add_to_group("terrain")
 
 	if not Engine.is_editor_hint():
 
 		_register_murderer_ids()
-
-	var day_system = get_node("/root/DaySystem")
-
-	day_system.activate_day_system()
+	
+	if not DaySystem.day_system_started:
+		DaySystem.activate_day_system()
+		DaySystem.day_system_started = true
 	
 	if GameState.has_island_return_position:
 
@@ -54,6 +54,7 @@ func _ready() -> void:
 		)
 
 		GameState.cave_return_position = Vector2.ZERO
+		
 
 
 

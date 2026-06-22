@@ -13,7 +13,7 @@ func _on_play_button_pressed() -> void:
 	AudioManager.play_sfx(AudioManager.CLICK)
 
 	get_tree().change_scene_to_file(
-		"res://Scenes/Worlds/Levels/island.tscn"
+		"res://Scenes/Worlds/prologue.tscn"
 	)
 
 
